@@ -1,18 +1,1 @@
-element {
-}
-.preview.astro-CPHZM2EF .active-emoji-selection.astro-CPHZM2EF .main-emoji-image.astro-CPHZM2EF {
-  min-height: 0;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.hidden {
-  display: none !important;
-}
-* {
-  margin: 0;
-    margin-right: 0px;
-    margin-left: 0px;
-  padding: 0;
-  box-sizing: border-box;
-}
+<img id="main-emoji-image-color" class="main-emoji-image emoji-variant-color astro-CPHZM2EF" src="/data/color/svg/1F63D.svg" alt="kissing cat emoji">
