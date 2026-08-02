@@ -73,7 +73,7 @@ self.addEventListener(
 );
 
 
-// Network-first for HTML, cache-first for assets
+// Serve cached files first
 self.addEventListener(
     "fetch",
     event => {
