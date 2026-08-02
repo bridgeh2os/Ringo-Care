@@ -1,0 +1,95 @@
+:root {
+
+    /* Colors */
+
+    --background:
+        #f7f5f2;
+
+    --surface:
+        #ffffff;
+
+    --text:
+        #1f2933;
+
+    --text-muted:
+        #667085;
+
+    --primary:
+        #557a95;
+
+    --primary-hover:
+        #466579;
+
+
+    /* Borders */
+
+    --border:
+        #e5e7eb;
+
+
+    /* Radius */
+
+    --radius-sm:
+        8px;
+
+    --radius-md:
+        16px;
+
+    --radius-lg:
+        24px;
+
+
+    /* Shadows */
+
+    --shadow-card:
+        0 8px 24px rgba(0,0,0,.06);
+
+
+    /* Spacing */
+
+    --space-xs:
+        .5rem;
+
+    --space-sm:
+        1rem;
+
+    --space-md:
+        1.5rem;
+
+    --space-lg:
+        3rem;
+
+
+    /* Typography */
+
+    --font:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+}
+
+
+/* Dark theme */
+
+[data-theme="dark"] {
+
+    --background:
+        #111827;
+
+    --surface:
+        #1f2937;
+
+    --text:
+        #f9fafb;
+
+    --text-muted:
+        #cbd5e1;
+
+    --border:
+        #374151;
+
+}
