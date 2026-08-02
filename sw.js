@@ -22,7 +22,7 @@ self.addEventListener(
     "install",
     event => {
 
-        // Activate new service worker immediately
+        // Activate immediately
         self.skipWaiting();
 
         event.waitUntil(
@@ -40,7 +40,7 @@ self.addEventListener(
 );
 
 
-// Remove old caches
+// Remove old cache versions
 self.addEventListener(
     "activate",
     event => {
@@ -66,51 +66,32 @@ self.addEventListener(
 
         );
 
-        // Take control of pages immediately
         self.clients.claim();
 
     }
 );
 
 
-// Serve cached files first
+// Network first strategy
 self.addEventListener(
     "fetch",
     event => {
 
-        const url = new URL(event.request.url);
-        const isHtml = event.request.destination === "document" || url.pathname.endsWith(".html") || url.pathname === "/";
+        event.respondWith(
 
-        if (isHtml) {
-            // Network-first for HTML pages
-            event.respondWith(
+            fetch(event.request)
+                .then(response => {
 
-                fetch(event.request)
-                    .then(response => {
+                    return response;
 
-                        if (response && response.status === 200) {
-                            const cache = caches.open(CACHE_NAME);
-                            cache.then(c => c.put(event.request, response.clone()));
-                        }
-                        return response;
+                })
+                .catch(() => {
 
-                    })
-                    .catch(() => caches.match(event.request))
+                    return caches.match(event.request);
 
-            );
-        } else {
-            // Cache-first for assets (CSS, JS, images, etc.)
-            event.respondWith(
+                })
 
-                caches.match(event.request)
-                    .then(response => {
-
-                        return response || fetch(event.request);
-
-                    })
-
-            );
-        }
+        );
 
     }
 );
