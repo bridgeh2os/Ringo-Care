@@ -1,6 +1,5 @@
 const CACHE_NAME = "ringo-care-v2";
 
-
 const APP_FILES = [
     "./",
     "./index.html",
@@ -23,6 +22,9 @@ self.addEventListener(
     "install",
     event => {
 
+        // Activate new service worker immediately
+        self.skipWaiting();
+
         event.waitUntil(
 
             caches.open(CACHE_NAME)
@@ -37,6 +39,8 @@ self.addEventListener(
     }
 );
 
+
+// Remove old caches
 self.addEventListener(
     "activate",
     event => {
@@ -62,8 +66,12 @@ self.addEventListener(
 
         );
 
+        // Take control of pages immediately
+        self.clients.claim();
+
     }
 );
+
 
 // Serve cached files first
 self.addEventListener(
