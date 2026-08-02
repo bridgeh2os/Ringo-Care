@@ -1,4 +1,4 @@
-const CACHE_NAME = "ringo-care-v1";
+const CACHE_NAME = "ringo-care-v2";
 
 
 const APP_FILES = [
@@ -37,7 +37,33 @@ self.addEventListener(
     }
 );
 
+self.addEventListener(
+    "activate",
+    event => {
 
+        event.waitUntil(
+
+            caches.keys()
+                .then(keys => {
+
+                    return Promise.all(
+
+                        keys
+                            .filter(
+                                key => key !== CACHE_NAME
+                            )
+                            .map(
+                                key => caches.delete(key)
+                            )
+
+                    );
+
+                })
+
+        );
+
+    }
+);
 
 // Serve cached files first
 self.addEventListener(
