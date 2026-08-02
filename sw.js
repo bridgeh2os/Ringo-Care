@@ -1,4 +1,4 @@
-const CACHE_NAME = "ringo-care-v1";
+const CACHE_NAME = "ringo-care-v2";
 
 
 const APP_FILES = [
