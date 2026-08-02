@@ -11,14 +11,7 @@ const pages = [
         name:"Medical",
         link:"medical.html"
     },
-    {
-        name:"Emergency",
-        link:"emergency.html"
-    },
-    {
-        name:"Photos",
-        link:"photos.html"
-    }
+  
 ];
 
 
