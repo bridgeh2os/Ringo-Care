@@ -1,4 +1,4 @@
-const CACHE_NAME = "ringo-care-v2";
+const CACHE_NAME = "ringo-care-v3";
 
 const APP_FILES = [
     "./",
@@ -78,16 +78,39 @@ self.addEventListener(
     "fetch",
     event => {
 
-        event.respondWith(
+        const url = new URL(event.request.url);
+        const isHtml = event.request.destination === "document" || url.pathname.endsWith(".html") || url.pathname === "/";
 
-            caches.match(event.request)
-                .then(response => {
+        if (isHtml) {
+            // Network-first for HTML pages
+            event.respondWith(
 
-                    return response || fetch(event.request);
+                fetch(event.request)
+                    .then(response => {
 
-                })
+                        if (response && response.status === 200) {
+                            const cache = caches.open(CACHE_NAME);
+                            cache.then(c => c.put(event.request, response.clone()));
+                        }
+                        return response;
 
-        );
+                    })
+                    .catch(() => caches.match(event.request))
+
+            );
+        } else {
+            // Cache-first for assets (CSS, JS, images, etc.)
+            event.respondWith(
+
+                caches.match(event.request)
+                    .then(response => {
+
+                        return response || fetch(event.request);
+
+                    })
+
+            );
+        }
 
     }
 );
