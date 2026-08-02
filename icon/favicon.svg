@@ -1,1 +1,819 @@
-data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAYAAAB5fY51AAAgAElEQVR4Xu2dB3gUVReGv01vpBESSkKVJl0ERJCiiIjizy+o2Hv57dgFRWzYKSIWrFgQUVGsqBQVBKX3ThKSkF42W7IlW/7nLMuVsjs7O1uyM3Pf58mT3Lvo7szsfnvn3O+cowGHw+HIBI1MXieHw+FwweJwOPKBr7A4HI5s4ILF4XBkAxcsDocjG7hgcTgc2cAFi8PhyAYuWBwORzZwweJwOLKBCxaHw5ENXLA4HI5s4ILF4XBkAxcsDocjG7hgcTgc2cAFi8PhyAYuWBwORzZwweJwOLKBCxaHw5ENXLA4HI5s4ILF4XBkAxcsDocjG9QqWBMAjAHQCUAhgA8BrJbNVeOoke4AbgfQFUAlgO8AfK22E6FGwaILPc7DhX4SwHNsxOFEDlO9vDdfBfAwG6kAtQnWjQA+ELiuMwDXm4PDiRSeBzBF4MWMBPA7GykctQkWLaEv9XFN3wBwDxtxOE3HXAB3+3j6RQCuZCOFozbBOgDgNBHXdDaAyWzE4YSfWQDuF/G0BwF0ZiOFozbBagQQI/KavusOcjrZDIcTeugz+Q6AW0U+lQ1ALBspHDUJVjaACj+v58cAbuCixQkT9Hn8CMB1fj5fjnvnUPGoSbD6Atgi4YqSaF3PRhxO6FggQayIfgC2spGCUZNg/QfAtxKvJQU2rwFgZzMcTvCIBvApgElsxj/ovU12HcWjJsG6y70DKJVvAFzujhlwOMGCYqqLAfyXzfgP7STOYyMFoybBegHAYwFeyx8BjOeixQkSJFa06r+IzUjjRQCPs5GCUZNg0ZL76iBcSxIt+jakHUcORyq0s0er9kDFivjMHbJQPGoSLHIDDw/SFf3Nnd5jYTMcjnjiAXwP4Hw2Exh/ABjBRgpGTYJFBjtKdvbImDOaY/UuLYwW0XH15UF8w3HUBX3hjRJzyEmxGgzOTcSKggY254FDIg3RskdNgiVoAH3zjm7o0TYZ457dCp1JtGjRqm0sABOb4XC8kwjgJ7GrodSEaHw2Pgd7qq14ZHk1m/eAasyjahEsn6bRb6f0xqi+zbG9UI8xT23xR7TWArgAgIHNcDinkgLgFwBnsxkBUhOjseSm9ugS68QfhQ249tty9pgX6D1exUYKRS2CdQaATULXcMPMgeiem+z6m0Troqe3os4o2sGwwb3E17EZDudfUt0hhAFsRoCM5Bj88EQf5FXWuRLD9tdYMeqTEva4F/oD2MxGCkUtguXTNFr5yTAkxZN/7yh7io24cPoWVOtFbwaS05iC+ly0OMdDYkVBccq08ElWs1j8PL0fOsY5YTxU45rTWxzo8RbVmRREFeZRtQiWoGmUlt+lC4ax8TH2lzZg9JOb/RWtcwHUsRmOmskAsNIfsfr12TPQpXUSdLvKYav/dxO66xsFMNkEw7CqMI+qRbDIWPcou7Qn0S03CRtnDmLj4yHRophWZb2VzflglzuoKhgl5SieLPemTA8xR5qdFodlT/dziZXDYoN20xH2GHHex8U4UCv4xakK86haBEvQNDqqTya+ndqHjU+moMKEC57agtJa0barfQCGctFSLSRWa9z1133SOjMevzzdDx1yaBMRMBXXw1SsdT96lGu+KcOfhwU3o+k9fi0bKRS1CJagafT6c1th3h3d2NgTRVVmjJm+xfVbJCRa9JyCu5McxUGlXihmJUqs2rZIwLLp/Vy/j6HdVALHSX7AR36rwqJdejb2gCrMo2oRLDLWdWSX9iSmXNYeUy7rwMbeoBXWqCc3+yNa+QAoOHbi+p6jVNoA+FPovXY8JFLLnz3DtcI6hk1vgW7HqRaGWX/XuX4EUIV5VA2CRcdIASivlUbn3dEV15/bmo2FING64KnNKKgQLVqH3Sst+s1RLu3cqxz67ZMOOQn45ekTxYowFtTAUnaqpe/znTo8ys2jqhAs0aZRsVRqra7bQwrIi4RWWEO4aCkWEqm/ANcKyycUWKfbwOz0ODZHOJ1OaNcXw2k/dTeQm0ePooYVll+mUbFU66wYPc1v0aLbQ7pN5CgHuv2j20DRYvXrM/2QlXqiWBHW2gYY9no2q3Pz6FHUIFh+m0bFQqJ14dNbXSZTkdBKj24PKSDPkT8UWKfbQAq0+6R7XjJ+fqqvR7EiDPsqYa3xvBPIzaNHUYNgSTKNiqXO0IiLntmK7YWnxh28QP4ssjxw0ZI3JFZkXSALg096t0/Bj9P6IiPFc4Mbp92BuvXFgj2aRJhH6b3+JhspEDUIlmTTqFh0DTZXlYdNhwS3nY+HRIvMpWQy5cgPMoOSVUaUWPXv1AzfP9kXqUle931grtCj4VAtG3uCm0fVscIKyDQqFoPZ5kqY9kO0aI+a0nhU0e1EQVCaDaXbUNqNT0isfnyqL1ISvIsVod9Rjka9sDGZm0fVIVgUY/B6zyfGNCoWEq3xz2/D3/tE5z/TP6QqD1TtgRP5ULUFqrpACc0+OatrquvL0JdYeUrF8cTDv1XhC5WbR9VwSxgU06hYTFY7Ln1hu6t6qUgo+EUrLS5akQ2JFa2sqK6VT87pkY4lj/dGYpzvzRxKw6F0HF9w86jyV1hBNY2KxdLowPgZ2/wVLSoCSMUAOZEHFd2j4nuixerbKX0QHxvF5oTwlIrjCW4eVb5g+TSNLp3aB+f1yWTjYEGiddlL27Fyu2A6xfHQfjaVW6ZgLidyoM0RKmt8NDPZB+f2zsCXj/YWLVY2vRm6HYJvUQY3jypfsEJiGhVLo82BK1/diWWbjxZiEwFFXcdw0YoYSKyWubvc+IQamXz+UE/ExogTK6IhvwbmcnGWGJHmUXrPb2EjhaH0GFbITKNisdkduG7WLny3XnR5LBItaiFGnVU4TQd1RKJWXKLE6pKBWfh4cg/ERIsXK6fDCe0Gz6k4ntBZHOip8sqjSheskJpGxWJ3OHHtzJ3+iBZVaqNmrdS0lRN+qLkpNTn17PI8CRKrTx7oiego/z5O1hojDPtEvydcqN086t8Zlh+C7emDYRr1h5vn7sYXq8XFK9yQaAmuEEMImSI7U/obgPYA0txB52bu38d+jh/Tv/EEbYHRfQ/9kFHN09+0Q0GFyw8A2O3+b5qC8W6xEsUV5+Tg/XtOZ2N/MOythLXWcyqON9RuHlW6YIXFNCoWysa//c29WPjHqfWOvEBbR5f58wHyEwokkwmNROmYOB37HfydCP+gwB+J1373z7G/KaXJv0+5eOgL4ksAomIEVw1viXfu7AaNxv+PkcPmcN0OCqXieELt5lH/z7S8CJtpVCwSResaAIvYjHRoNTTS7fuin54y3Hihj/gOACvcvii6xqLTCwSY5C4zHHKxIsxlejQUCKfieEKEeZR2mekaKxKlC1ZYTaNiIdG6d/4+fLiijM35gD6kNwD4mM2Ig1ZQlGh9TKCod52oD6SMIEHf6BYvEjHysvm7ArsOwEdixfvG81rh9du6SlpZHUO3vQw2g+jGJgy1m0eln/HIh44t7KZRf3jwg/14Z5nvlAw3YkSLgsRnHSdQ9LfnWibKhXZZ/z5uBbbevYnhDb/E6vYxbfDaTXTHLB272Yb6zaKv+wmo3Twq6iLJlCYzjfrD1E8OYs73xWzsAxKt2wG8y2aOQqVOaEeUuqaks1kOQc7dBQDe9lDS51YA74gVq/vG5eH5a09jY6mYiupgKhGdb3oCvxc24DoVt60XdaFkSpOaRv3BT9Ei7nHbNWh1QAJGqSMc31D9KhIoilVR49G57BEfBEusiLqNJXBafafieELt5lElC9YllHnDrrQHKj4ehuSEyAjpvPhVIZ5bXMBemwioNnMSG3H8wa9z98TlHfDYRHJ2BE6jzgz9Tr+sLScgsvIoGY9/YCMFoWTBupNym71dq7SkGBz56Bw2jgRmLS3Ck5/RPkFk0blVItpkJaBZQjRSEuknxvV3M/rtGh/9Oz05Bid7Jx1OQGu0QW+ywWCyQ+/6sUFvtsNAv91zR2rMOFjmb6w89Dx7dSdM/k/boD2R8WA1LJWiS2p7pPu8AhgbBf0Q9N5/i40UhJIFK+SVRkPBO8tK8OAHZDkKHy3SYtEhOxHtcxJd7afau//umJPgakMVyG6YP9Du6ZEaCwoqzSisMKGw0uRqp0adt+mnWicUOw8+r93UGbePyWXjQKFUHFcZZFLxABBhHiXD9BQ2UhDheSc2DRFlGvWHUIsWidDIXhmuH6pU0SJNHhuJVfVWrNhWi5U76rBqey3K6vy3BYgl2GJFWKqNMO73LxXHE2o2jypZsCLONOoPHy4vxb3v7oMzsC9jF5QzeU6PowI1olcGuoWoOkW42VtixKrtdVi1oxard2tdt5aBQovJ12/tihtHBbdGGqHfU4HGOtENeL2iZvOokgUrIk2j/kBu+Nvf3CNJtJLiozD2zCxcPiQH5/fN9KvkiRyhUj6/ba3FF2sq8NPGapisDr8Pg8TqnTu7u1Jugo0rFYduB4PAzHW1mP2PYHFIxbatV6pg0XFFtGlULF/9VYEbX98tSrRiojU4r3cmLh+ajYsHtIiYHdBwQ7X1f1hfjcV/VbgKKNpElG8hsfrw3tMxcYioFoN+Yy7VoaFQdDFHQdRsHlWqYMnCNCoWEq2b5+5xlak5GfqgDe6ahsuG5mDC2dnI9NL3Tq1Qs9sl66qweE05/tmv8yj8VBbm/Xu6h0ysCKmpOJ5Qs3lUqYLl0zS6ceZAWcVyKEZz/axdqKw/+qY/o1MzXDKwhau8SV5WgvuoOEIUVZld5X2+W1+FLflHE4hz0uOw4P4eGHp66BIEAknF8YRI82g/JbaQU6pgyco06g87Cg1omRmHFl7anXPEUam1okJrRa/2VMYrtJiKamEqEayw4BdqNo8qVbAiotIoh0PeMuo5KDUVxxtqrTyqVMGSpWmUozxsWhN0uyuDfmBqNY8qVbBkaxrlKItgpOJ44uolZVhdJJjKRJ8Bqt6hKJQqWLI2jXKUQbBScTyhVvOoUgVL9qZRjvyxVhlgOCC6J6VfiDCPHnTX51cUShQsOiZFmEY58ka/uwKN2sBTcTyhVvOoEgVLUaZRjjxxNNqh3eDTKyUZkebRFgACz7aOIJQoWNRogZoSeCWU7ek5HCKYqTie2Fdtxfmf+hRExbWtV6JgNXl7eg6nflsp7EbBmlUBIbJtPRmov2cjBaBEweKmUU6TYm9oRP3W0pC/BjWaR5UoWIKm0e55ydjw2kA25nCCTUNhLcylwUvF8YYazaNKFCxuGuU0Ga5UnA0lcNr8r8flLyLMo5+4OyspBiUKFjeNcpqMRq0J+hCk4nhCjeZRJQoWN41ymgzD/ipYq6mLWOhRo3lUaYJFx8NNo5wmwZWK80/R0f7cYWDhDh0eWyFos7IBUFRFR6UJFjeNcpoMS5UBxhCl4nhCjeZRpQkWN41ymgzdrnLY6i1he341mkeVJljcNMppEkKdiuMJNZpHlSZYdwOYy67oSVB/vtIFw9iYwwkW5iP1aDgsWD0hJIgwjyqqbb3SBIubRjlNgnbLEThMFOMOL2ozjypNsLhplBN27AYL6rf7rJwQEtRmHlWaYAmaRm84rxXeuL0bG3M4waChoAbmMgMbh5OHfq3C4t2CaUC/AxjJRjJHaYLFTaOcsBLOVBxPqM08qiTBomPhplFOWGmsa4B+T1VYn/N41GYeVZJgcdMoJ+yEMxXHE2ozjypJsLhplBNWnHbH0a44gq6C0CLSPKqYtvVKEixuGuWEFUuFAcZD4UvF8US9xY5ebx1mYy8opvKokgSLm0Y5YSXcqTjeUJN5VEmCxU2jnLDhsNig3XQkbM8nxLkLinGwTrB+/AsAprCRjFGSYH0G4Cpv12JUn0x8O7UPG3M4gWAqroepOPypOJ5Qk3lUSYLFTaOcsKHdVAKHxR625xNChHl0FS3E2EjGKEmwuGmUExZsegt0O5omFccTajKPKkWw6DgETaNv3tEN153bio05HKkYC2pgaaJUHE+oyTyqFMHiplFOWHCl4qwvhtPehOark1hV2IDrVdK2XimCxU2jnLBgrW2AYW/TpeJ4Qk3mUaUIFjeNcsKCYV8lrDWCvQDDjprMo0oRLG4a5YScSEjF8YZazKNKESxuGuWEHHOFHg2HakP+PFIQYR6dAWAqG8kUpQgWN41yQo5+Rzka9eHriuMPajGPKkWwuGmUE1IiKRXHE2oxjypFsPIBdGBX7ySmXNYeUy7z+jCH4xNKw6F0nEjltXW1mPOPYKrQQQCd2UimKEGw6Bi4aZQTUiIpFccTajGPKkGwuGmUE1JsejN0OyrYOBJRi3lUCYLl0zS6ceZAdMtNZmMOxx8a8mtgLm+arjhiUYt5VAmCxU2jnJDhdDih3RBZqTieEGkeHQfgBzaSIUoQLG4a5YQMa40Rhn3VbBzJqME8qgTB4qZRTsgw7K2EtTayUnG8oQbzqBIEi5tGOSHBYXO4bgebsiuOP1y1pAxrigTF9RMA17GRDFGCYHHTKCckmMv0aCiIzFQcT6jBPKoEweKmUU5I0G0vg81AFj95IMI8egBAFzaSIXIXLHr93DTKCTp2sw31myOjK45Y1GAelbtgcdMoJySYiupgKtGxsRwQaR7NAtC03V8DQO6CxU2jnJBQt7EETmtkdMURy95qK0YrvG293AWLm0Y5QadRZ4Z+Z2Sn4nhCDeZRuQuWoGk0LSkGRz46h405HDEYD1bDUmlkYzmhdPOo3AWLm0Y5QYVScerWFwOOyOmK4w9KN4/KXbC4aZQTVCzVRhj3yyMVxxMizKMfA7iejWSG3AWLm0Y5QUW/pwKNdWY2lhtKN4/KXbC4aZQTNFypOHQ7KGOUbh6Vs2DRa+emUU7QMJfq0FBYx8Zy5LMdOjy+QvCW1gYglo1khpwFKweAoEtu6dQ+OK9PJhtzOELILRXHE0o3j8pZsLhplBM05JiK4wmlm0flLFjcNMoJGqaiWphK9GwsV5RuHpWzYHHTKCcoOJ1OaDcdkV0qjjdEmEf/B+BtNpIRchYsbhrlBAWb1gTd7ko2ljsjFxTjkELb1stZsLhplBMU5JyK4wklm0flLFjcNMoJGLmn4njiwV8r8eVuwbZkqyiLh41khJwFi5tGOQFjrTLAcEC25aE8omTzqFwFi143N41yAka/uwKNWvmm4nhCyeZRuQqWLEyjhZUm7DxswK4iI7bm61FWZ4HeZEd9gw26BhsaLA5kpsQgLTnGVQonJz0efTumoFe7FPTr2AztshPZm5ATfByNdmg3lLDxMYrqG7Gz0oJdVVbX7yqjHTqrAzqLA1qzA4kxGjSLj0JqXJTrd3ZyNHplx6N7Vhy6tYhDXmrTGsmVbB6Vq2BFpGl0f2kD/txZhz921WH1Li2qdY3sQyCFdi0SMOHsbEwcko3e7ZuxeU5wOD4VZ3uFBT/sN+CHA0aU6Ch7RTpZSdE4KzcBQ3ITMTgvAR0z4thj4UCkebQvgG1sJBPkKljjAXwjdI4rPxmGpPhoNg4li9dUYNbSIuw4LBjoDIjTWiXi5vPb4IbzWqFZYgyb50inZH0xPv67Fgt36lCoDUykhOjZIg53DkjHxV1S2Fwo0Zrt6P22MtvWy1WwIsI0+sHyUsxaehgFFeGLgSTFR2HSOS3x4Pi2/JZRIocrTXjlq0J8vroCFrugwTKotE+PwV0D0nFFj1Q2FyqUah6Vq2A1qWn0p43VeOLTQ65bwKaChGv6lR1xx5hcREXJ9TKGF3K0z/uxBM98ke+KHzYVnTNj8cSw5hjZPilkL0Gp5lG5vtMFTaPn983EN1P6sHGw2FtixOT39mP1bsFmlWFlQOdUvHdPd3RqGbo3vxI4WNaAm17fjc2HIidfcGheIqaPaI4uzYMf41KqeVSughV20+i8H4sx9dNDsIXxFkIsyfHRWPhQT15Kxwurttfispd2wNzYdKsqb8REAU8Nb47r+6SxuWAgwjy6EsB5bCQT5CpYYTONWhoduG3eHny9NrJzzWKiNXjv7u6YOIQcH5xjfLG6HLfN2wt7hDeVuLR7Cl4e1QJx0cH5SCrVPBqcsxNe6DWHxTRqNNsx4YVtWLOnPqAjbN4sFrlZ8chtnuD6nZeVgNzm8chsFouCChOO1Fhcv4urzThcaUZZHR2eNF687jTcfXEeG6uZmd8exrSF9N0mjZzkaOSlxqBNagzapsWidQr9jkGd2YFSvc31c0RvQ5n7N80HwuDcBHxwSUskx0WxOako1TwqR8EKi2lUa2zEuGe3YUu+tJgHmT+vOCcHVwzNQavMeDYvhlpDI75cU4FPVpVha4Hgst4jtNKaNKwlG6uR9387gvve3e/3offKjsPlPZphfLcUpPlpi6kw2LBkrwHf7jVgT7W0L50+OfFYeGkrlyE1EFYWNOCGpYIFeQnZta2Xo2CF3DRao2/EBU9txt4S/3YB27ZIwOVDs122g265yWw+EHYVGVzCtWh1hWgjanxsFP6Y0R8924XH9xNpUFbByKmb0Cgy3khGz/92S8EVPZoFLQB+oNaKJXsMWLrP4LcRtUeLOHw+oRXSE/wTzONRqnlUjoIVUtMoxazozb69UPzKJjEuCtMmdcRdY0NnMWiw2F27XD9sEGwwwCDxXPvymUhPbto0kXBDq9NBD64XfVs9ulMS3rgwGwkU/Q4BDqcTH2ypx8tr62AWLqp3An1bxuPLia0RHyPt/aRU86i0s9G0hNQ0eu2snfhmXRUb+2Jw1zS8fVe3sNkKnv0iHy997dPF7OKaES3x9p3d2VgN3DJ3t2s16gt64987KB0PDg5Pk5JCbSPuW1aJLeUW9hp8Ma5LMuaNlb6JokTzqBwF6yUAj7CrchLd85Kx4bWBbOwPLy8pxDOLCthYCDJuPjWpI+4cmwuNJrynccm6Stz2xh5R2/S0ylJLHuKmgzoMn7KJHbs34qM1mDc2G6M7Bee2XSxSVluPDcl0pfVIQYR59HkAT7CRDAjvJy04hMQ0umxzNSa+uIONhTi7Wxreuas7OuQ0XTUF2q6/ee4e9pq8QcbSVc9T2E/5DHt8oyhj6Jtjs8OW1+cJWm1N/qUSm8rErbY+Ht8SIyS44pVoHpWjYIXENNr3vr9xsMzExt4Y3S8TSx73XxBDgdjb12+m9Mb5fZuzsRL5ZXMNJry43eehje+agtcvzGbjpuTqJWVYXeT7PdcxIxa/X++/VUWJ5lE5CpagaXTq5R3w+MT2bCyGDQd0rkC7L7q1ScKqGf0jploCWS/6T16PCq1wgPmOC9vg1Ru7sLESmfzePrz7a6ngobVMicbya/OQGqBlIFjoLQ6MW3QE+cK3bS5+uLINeuf4Z495dW0tXl8vmEZ2AICs3hhyFCzBm/+37+yGa0a0YmMxUOrGuOeESwNlNYvFHy/0j7gKCSu31+ISH6+d4mwv39CZjZXI5Pf3491fjgge2qIJrXB2XtPdxnuCigVe/PkRV2FAIb6Y2AqDc/177Qt36PCYcNt6IwBZeV/kKFhkjvJ65d69uzuu9NM0SRVA29ywmo09sfzZM3BW1+DmewWLhz7cj7d/9v5hnXtbV9w4qjUbK5H3fj2C+9/zbhS9pV8apg2PzNvif0pMuOyrMvZaPbHrf+39NpMu2aPH/b8IhgzosxTenYcAkaNg0RUgh65HZt3SBbeObsPGYnnys0OuInyeiHTnuNlqx8ipmz0WEGyZEYeD7wxhY6VC56DH3X97vD0mI+Y3V7QOmdcqGHy1W48HfvUsLncPSMcjQ/y3X3y8rR5PrBJssEFPGBkBPZHIUbDId+A1SPXcNZ1w/yVt2dgfHnh/P+Yfd1vROjMes2/pgrFnetXHiKG8zoLrZu3C2r3/5j12aZ3kquIQLNd9pLOn2IhJr+zAofJ/A9lDTmuGOSMzkJ0c+VVal+cb8fiKalQY7ez139AnFc+MlPb+e2ujFi+sqWVjD1A8uBMbyQA5ChZ5D3p6O7dTLmuPKZd5jcn7hHIH/9qtRf/TUjG4W2TeAgqx6M9ylNRYXK99SHdp/h2589ceLdbuqUfbFvG4MBOw1YuzD0QKG0rN2FZuxlm5ieiZ7V+g/XhEVGygbdXI2PIWiRwFax2As9gRnMS94/Iw49rT2JijXhwWG7SbvMf2lM4zf9TgvS2ClUbW0iKUjWSAHAXrNwCjvJ3bm89vjTm3dmVjjnoxFdfDVCy4wlA0jy2vwsKdgkbaXwCMYSMZIEfBosRnSoD2CJV0ef+e09mYo160m0rgsPwbD1Ibd/9Uge/2k3PBK18DmMhGMkCOgvUJ5fV6O7fjBmTh84d7sTFHndj0Fuh2+KwHpWhuXFqOFQWCJZIWUFyfjWSAHAXrLTJvezu3I3tl4PsnqUckR80YC2pgKTvV5qEmrviqFOtKBFvQvQHgHjaSAXIUrFfIK+nt3J6el4z1Eqs1cJQBtfPSri+GU2QBP6Vy7oJiHBRO+6F2eY+zkQyQo2A9QDu23s4tVdus+Ww4G3PUh7W2AYa9nk2YaqLDnHz40Oz7ALzORjJAjoI1DsB3Qud275uDkZuVwMYcdWHYVwlrje8qCEqGchSHfljs6xDHAviZjWSAHAWLascIFoL6cVpfDO+ZwcYc9eC0O1C3vhjCKfLK58/DDbjmG5+bDpQRf5CNZIAcBYuKtQtW9Z9zaxfcfL7/+YQc+WMp18OYL5iOogoWbKvHk8J5hOT3IBu9rHwfchQs4hDVNXOf+FPgbnf1ot9Rjka9vFJxQsH0P6rxwRYdG3uASlvIzmEtV8FaBuACdupP4qIzs/DFI9yLpTbUnopzPDd8W4aVhYJxvB8BXMxGMkGugkVdc6h7jkeoMujGWYPYmKMOKA2H0nE4wPCPilGgFbQ0zAYwmY1kglwF614KVXk7x9FRGtQvGsHGHHWg9lScY9gdTpw2t8CXpeEu6sfBRjJBroJ1IYCfhM7xP68OQI+2sqr+ygkAm94M3Q7f/QjVwM5KC8Yu9FmlYjTgKiQgK+QqWFQ/hgroe2XmTZ1x25hcNuYom4uVgzgAAB27SURBVIb8GpjL1Z2KcwzqfTj9D8EdQoKKYIrryBtByFWwqNYt1Q1p5u1c/ndwC3wy2WudP46CcDqc0G7gqTjHuO37ciw7JJj0TL6PyCxw7wO5ChaxFMAl7uM4hebNYnH4/aFszFEu1hojDPsEu8Ooit5vF/rqwrMEwAQ2khFyFiza4ZgpdK43zx7kqmvOUTaGvZWw1gpu4auG/TVWjPqkxNfx0qYV7bTLDjkLVj/SJKEzrob2VmrHYXO4bgfVnopzjE+26zB1pc/VZm/A1RtBdshZsHzGsXj1UeVjLtejgafiMO76qQLfC1cZlW38ipCzYBGCcaxWGXE4oIKefGpGt70MNsOpvQjVypnzD6OyQTA9ULbxK0LuguUzjrXzjbPQPttro2iOjLGbbajf7NNvpBoK6hoxfIHPkjKyjV8Rchcsn3GsV2/sjDsu5H4sJWIqqoOpRDDBV1W8t1mLZ/70WalCtvErQu6C5TOONbBzKlY+35+NOcqhbmMJnFbB2x9VcfHnR7C9QrBShazjV4TcBYv4DMBVrr+8wCuQKo9GnRn6nTwV5xiH6xtxju8Kox8DuJ6NZIgSBIuC7hR898q0SR3wyKWUicBRCsZD1bBUCO6GqYpZf9e5fnxwka8c3EhHCYIVFxej0VltTqqe6JFOLROx7XWv3e05QWL1bi225utdZt3hPdOREEfFYYMPpeK4yiA7hMsRqImhHxahqN57Id5oDfR2J6huuKzvoZUgWGibFf9DUbWFvj288vcrA9CzHa/eEAp2FRkw8cXtKK7+N37SLDEaFw/IwmVDcnBu7wzERFO4MThYqo0w7vdpjlQNFLei+JUQ0VH40O7ATWxCpihCsOLjMdZicVVQ9MoD/2mLZ67uxMac4NBgseP0O9ehWu+9WFxGcgzGn9UCVw5vibO7pbN5qej3VKCxTrBBqKp47s8azN/ss3Dh+QCWs5FMUYRg0RdIamK0WWeyx3i7DrnN47H3rbPZmBMc3v31CCa/R+XBxUHVYG+/MBfXjGiJRAm3jK5UHLod5LigprH93y1CtYBZNDFGYzHZnMlyvx0klCJYFDPZ9MdO7Rnua+SRFc+dgUFd0tiYEzgPfbgfb/8sfDviibSkGFw9oiVuu6ANTmslPkHdXKpDQ6HP4LJq2FBqxoTFpYLH26NF3LJdVVYqeil7FCNYE4dk3fLVX9XvCl2R56/phPsuacvGwWDzIZ3rA5ea5HVxp2he/KoQzy0ukHyMGg0w6ZwcPHNVJ7TK9LpvwpBrKo7O4nBZD3pl+z5Gf3hzgxYv/iVsFm2egPNrzPK/HSQUI1h0LFmpsY3Vukav9xnPXdMJ9wdBsAoqTHhqYT6Wba5Gg+Vo3aGJQ7Ix49rT0FrEh05JbCvQY8ijG4NySI9OaIcH/tMOyQmeL6EcU3FK9TbMWF2D79wJyUmxGpzbIQmPDslEu7RY95FJZ96GOrz0l/cVZ2p8lEVncVBumiK2VJUkWBjdN/PvX7fWem2Xs2x6Pww9XXrQV9dgwwtfFeKdZSWw2k69/rSd/+eL/ZGSoK7V1pOfHcKspUXsPAQCCf7Hk3vgrK6n3rqbimphKtGzcaSjtzgwbtER5NeduiFB4bvr+6Th/kEZaBYvfQd1bbEJk74uY+OTGdg6/pf1pZYxbELmKEqwfn6m1+AbZ+1bW153avY+bbEvelhar8JGmwPzfzmCl74uRK3Bu9eFmH5lRzz033ZsrBaW/lOFV5YUYmtBcOqqP/Tftph+5Ym7utqNJXDIKBVn7vo6vLLW++qHSE+Iwn2DMnBd71TERkv7ON64tBwrCk4tidy6WTRu6xPXbvoaU3C+TSIAaWcogtkye+Cum17fc/qW/H+/iW8d3RovXt8Z8bH+f5MtWVeJJz49hKIqcdvo55yejp+nU062OtlbYsSi1eVYvKZS9DnzRr+OzfDpAz3QLjsRNq0Jut2V7DE5cOniI9hYKpjbx8hNjcGUoZm4uIv/XkGzzeFqOrFwx7/v+V7ZcXhlVNZ7YxaW3somFYDiBMvw5cjr4MSCTQd1Lo9Qm+YJ6NjS//Iy2wv1uO/d/dhwwL9qAGSS/O6JvmysZtbu1WLx6gos/LOcxfr8JSc9DiufOwNZOiMslfJKxZn0VSnWlvgn2v1axmPGeVno0cL/WOhhbSNKDTYkxWjQp2WCDbbGdm3fKBbeQpQZihMs5+LLoo3O6iPQIEfKtSipNmPawnwsXiMtsZYbVE9Fb7Lh8z8r8N6vR7C72H/RaZ+dgC/H5yAnyXMwPlKhYPvbm3waOj0yvmsKHhuaidbNJMZDnVjYdk7+1WysEBQnWIRx8YipTmie8+ca1TfYXDGq17+Xbkokb9HW1wehRWocm+OcyO87avH4x4ew47B/sa7TMmKx5IrWSPeygxiJVBhtGPFRMYyNp27QiOW2M9Jw76AM2u1jc2LQaNA7b1a+LOu2C6FIwXJ+NjTDGBtLWyei1tXv/3YEzy4qEEwv8UX3vGQsergnOrUUb4JUK+TO/mJ1BaZ/no+SGnExHmJC9xTMuiCbjeXAwVorbv+hAgdqpb+3MhOj8PDgTFzdO5XNCeP8ve3sgpFsqCAUKViE/osRb2k0mjuErtVPG6tdAfX9pafusIglOy0OUy5rjxtHtUZ0lGJPZ0gwW+2YubQIM74sZHO++PvmttJvk5oIu8OJz3fqXeVfqgRSaHzRKSMWU8/JxKiOlGXjHacT49rNyf+BTSgIxX7CTIuHdbAj6tBRL/WJ7C4yuALq6/ZJiy8QSfFRuPfiPEwWMDpyxHG40oQ7396HP3YKWwCIm/ul4anhsmxajIZGB97aqMX8TfUwefDxieXM1vF44dwW6Jp1aujB6XTuazenoBubUBinfJiVhGHxiO8BzcXHjqms1oKnPs/H53+W07eQJGgRde3IVnhqUkdkp5/6huFI55Ulh/H0onw29kRCjAbrb2krq1jWyVQZbS5/1uLdesklveiDe2n3FDw2JBM5Kf+uOJ1O5/Xt5hRQZVFFomjBalg04ixHlGad0Uy3HoddAXWTVdr2OjG6X6Yr/aZbrvCSnCOdG+fswpd/CfutfrqqDXoGOSevKThQa3WVhllVKL1rNQk4BebvHJCOxJio3e3m5PdgDyoQRQsWLYgen9jun/d/Kzuzsv5U97tYTs9Lxms3d3GZQjmhg1KfqBDg2r3Ct+o7/9fe712zSObvEhOeXFWNfTXSA/MtkqLJLDpnZaHpAarCwx5QGEoWLMqfepWqa0i9ZlRDa9qkjrhyWA40p4bCOEGE4liXPLcNh8qFVxtp8VHY8T/l1eenndMlewx4ZV0tSvXSA/NUAJYymyh1ls0oCCV+CrsDeAvAcKnXKTUxGg/+tx3uGpsbsrrknKPQDu3c74uwaHWFqNv1a3o1w4zzWrCx0qA0mw+26FxVGPRWiQGuo/wB4H8A9rAZBaAkwSJn+/MUBqFbQSnXhpJPbx7dGo9P7IDmzQIv/cHxjMlqx/frq/HRilL8uYvaSoqD4jVrb2qLLJk53qVQZ7Jj9j91+HS7Do2+ddwb9F9+CGAqAGmpGxGGEgSLEgUfAfAwAMnR8P8MaoFnr+4kKe+Q4xvyIq3cXutKeSKxMpj9v+15dEgG7hpAjV/UA+UHzlhTi58P+p/SdBz0H78C4GX6vmCzMkTOgkWv/Qaqy0eVNKSe+zM6NcNrN3XBgM5iXcQcsewpMWLd3nqs26vF8m21qKqXHlQekpeAD//TEgkxkhbPsmdLmRlP/l7jq7OzLygR+gkAH8m1oJ9cBYviU28A6MkuhZ9Qr8LpV3XEf8+SV6pHJLOn2Ihlm2vw9756/LVHC61RuHaYWMZ1Sca8sZJy2RXHjwcMeOmvWhRqAzq3OwHc7Y5zyQq5CVYXALMAjJV6lhPjohqeuapT0i2jWyNWpd/WwaZKZ8Xdb+/DjxuD3yvw+j6peHZkFhtzgEa7Ex9vq3c8u7pW53AiEK8NdYGeTHsfbCbCkYtgUS4G3fpRMTKp23ZUmGgOgBmGL0Ysh0YzgD3CkQzVHBv88AafdgR/oeoMU0TkzakVJ/B0u9n5MwFMAXAf7UlIPBcUTKTmLXSrWMNmI5RIFyy6CGSEe4yaCUs8h7Q3/Jn7wrpqx5i/HtrRZovZBY1G6kUOGofKG7Bqex1iYzQYc0Zz5KTLy8H94fJS3DN/HzueQGmdGoMHz8pwVWaIigDvW6XRxsoPD85NRPv0pt89djqxu21pfm/Nl6ztfB59EQOg+ldSP9NUrvRFACSC/lUdDCNSDy4cUEFv6ubcNYAno3t0ulene/YTMHw54n44NXR72SRQAvYjCw7i9x0nJvw+PrE9pl7egY0jnQc/2I93lvnfl/Bk0pNjMHlsG1yZo4mYwPrMdbWY/c+JtouheYmu5GtPicdhwem0R0Wjf+7Mgm0eno9iuhTblexBBEDfPhfRdymbiSAiVbBoK2gvgM4SzxW5fcnqQPfoXtEvHrFaA81QNhEGyussroqmC/8o9/pss2/pgltGt2HjSGb654fw6jeB9ziYeVNnXNM1EeYy/wr7hYoF2+rx5Crvd0i0AqSKoDnJ4S5145zWdnbBs+yFeIZivGRhkJrlcYCadEdiik+kChadcFpd+QtlzdK9uGBD1WMYvz6nlcMes1MDZLLJEEFmSWqFNfu7Ip/1zamO+aH5Q9g4kiHrwsAH10uufnE87dJjcf/AdIzvltKktcUoTebMd4t81q5KjNHgjjPT8b8z08K0KvS7MB/FfCn2K2UrnD6DP7NRhBCpgkU7F3QvLRb6Wqa8Qb+NcaYvh59jd0atCiCY7xOK81B35Aqt+ATsg++cjZYZ8ohn3fX2XixY6b03nr/0yYnHvLHZaBuERqNSOKKzYfAH4leN2UnReGBwBq7qFVIv3xGNxto7b1aJcJvnUzlmrKb8Qn9a8lAg/3U2ihAiVbCuBLBQxDmir8D33auqKjbrJ6GKZ1H98kcXHMSuIv9dyobF/nyRNj3UBXvmt0U+Ky2IJTlWg2dGZuGy06XutUiH8vm6vCG+CuoxumXFYdqw5hjaNujZErYY2Ae1nn14M5vxH0rApNXWzSK/nC8H8CUbRQiRKliUf0GuXKFdPFqu0g4ixboCRr945Nca4FI2EQDUm+/xjw/it63+fhkeZdI5OXjvntPZWE6QJ4tKT/+0scaViiMmoVmIa3un4rmRzcNeLeO+ZZX4Zq+0eNqIdol4cnhzdM4MUmDe6Xyo7ZyC19g4MCg2RXcvF7KZU6FdQhI4aScghESqYBFXAFjkfp3Hs9W98/cXmwkCzsWDE42I/wfQSGsP7TZQPvN5Pj5cIf32qEfbZHwzpY+rZbsS+ObvSrz/W+kpu6H+0BTNJ8oNNlz7TVlANaqu6tkMD5+dieYBJWs7v287u+ASNgweFCSlHUVPTTQnAviajSKISBYs4iy3B4vcvPTO+QDA56E6f1QH3uaM3qrRwK9gBDVTmPVdMWYtPewzoC7E/ZfkuSpFKLFG/MGyBldfws9+L0edhJSd0Z2S8NbYHMnt3KVANdhn/10nubcgQYH5/52ZjjskBead2zSaxsF5s0r8isv6CYVf6DaRtjvJw0FerL/ZoxFG+K6+TGhYPHyww6lZKcZUSrtJ1CCU6pAf8aNd1clMODsbz1/TCblZPp9S9tBu6fxlRzDn+2L4WwX24bMzcM/A8FdrKNXb8PzqGny/3/9Y5DFapUTjkbMzXXXYxRSDdMKZH6VpHCAhyK5ofJ85FWJYPPx8IIraJHkNQlAVgvve3Sepk/ExqELEazd1xhmd/FrQKQJalX60ogwvLC5AjcgVF1UbpQYUibH+rlSCA1VKoFLGW8qlfzl1bR7rKkA4oLX3LycnUBltt/TPnXukhE1yXHDB8oJx8ciLnMDSk3dU8stNeGzBAfy0ybup0BcdcxLx9NW8UgRxaHUhHvihgqW/+OLlUVmY1LNpBZ4qJry4phaH68UJrSdGdUzCU8Oau7xnx+OkFBm77ax2c4t2s0kOgwuWAPovR0zSOMleodHU6Bvx/OICfLC8FDa7NJdkRnIMHpnQHneMacMrRdBevd4C3Y6jjv9FO3WY9nsNzD769V3aLQWzx0jxQQYXqpjw0bZ6vP6PFvUS45YU0rq6VyoeOCsDGYnRJFbWaNhH5M4+vI79I84JcMHyQdmCoXe++0vpvNe+LUJ9g7RvVAoU3zamDR6b0B4ZKU1jhoxEjAU1sByXikPdY25YWo6GRu+iNahNAr68THK9xqCjNdsx5x8tlXuRXMqYOgDdeWY6JvVKurTv2yXfsAc4p8AFyzt0biYBeIGyRtisn1Dp5RnXdkK77KCbCWUNbVho1xfD6V6t1prsuOfnSqwuEt4Qo+TjhRNasXGkUKxrxHN/BlzK+DDlv7vtPN5VW8VwwfLMIABve/GoiKJ3+xTMubUrL73sBWttAwx7q/BHYYPLoEkfdDHt22mXbfYFTX9L6A0qZTxlZTV2Vfm3A3oS5DW8A8A/bIbjggvWiVDDO3IUS3a8t22RgKev7IiJQ7JFbV+rkd+21uD7FSX4YUc9Kn0kGJ/MB5fkRHxRP1o9frff6CplXKKTFkZwswTAgwD8zxNSKPwTdRQy90wDcBeFnKRc67SkGDw4vi3uvjgPcX4bBJVNYaUJG/br8O0/VS6xkmqu7ZwZixXXUa06eWC1O/He5nq8uVELncRjdhum5wF4hrp/sVmVonbBInG6x508LcmRGBOtwU2jWruK7qm9lyGtLPIrTNiar8fWAoPr97YCPWoNAa0yXJBj/JdrciOi4qe/UI/BmX/X4bMdOtgk65ZLrCh5ea5bxFSJmgWL8qUoDYEqm0pidN8M66s3dY3jvQyBRz464Oo5WK0L/mepRVI05o/LQf9W3s2WcoB6DE5ZUWVYXWz2p8zLyVAlUEpX+4rNqAg1CtaZ7qRPCqxLhUou39Gw+NxCB5xkLu3PHlEh183ahSXrqHZi8OnfKh7zL85Bi7BX9gwBTucvMSbLpa3nl/Zzb+pIblPnDshTEYCNbEYFqEmwKPhB3W+pCoRUKFWC2n5/cmzb2flO/1hjRirV5Lr22D9SE2v3ajF62pagH3KH9FjcGwHVR4OG0zkjb07BE5p/7Qr02aP3zPMAct1zUvjC3fXc1WBF6ahBsKhPFHUUuTeAi0l5I+THoqqmHjuKGL8YcYeTKjRqND6D9vOXleCbf6qQmRKLC/s3xzUjIs9XJBaq+zX3h+B9VvJSY1zO7wlNULjPF+TGX1VocplFx3ZOxvV90thj3nGaNA7H1XmvH/ZmCKX7XKoGSv6rJDbrP1QdlDpDBWQEi3SULljUyeGXAIrxE1TSht4IFWzGCw1fjRxkdzi/10BDxc9OwWpz4OJntp5SlZNyC2dc1wkXD/D4n0U0lFf5xo+B5+i2TYvBvQMzcHmP8FcY9cUvh4x49s8aFJ2UO0iu+4WXtvJa8sYJ5+FoOMfnzi4kX5UvqLU1fbHexGb8h5qvXEDllNmMwvB8ppXDp+5ebVJY5q5ouofNiIAaWzjt0ZR/OIJNunn2i3y89DWZmT0zoleGq3pD1zbyaR66fGsNxs/Yzo5BLFEaoHdOPEa2T8Lwdono2zI+IvoQHs/BWiumrarBmmLv7vv7B6XjgcGeepg4F8fFNNzU8tUKf1c83d0VQcewGf+g97xiwxNKFixaant/p3mHSi6T1WE5m/ETpxMaw+IRd2o0GmqKwZb57W9ZI2oX7ZbzW2PalR1dt4xy4JLntmLldt8WodMyYzGwdQIG5yW6RCo9IZBKnKGDbvle/qsWn+6g3qLCZCVFY/Ntx2duOY2A8+62sws/YlPSGOW2MFBJY39R7OdasQdGdxnu3CyxUNkA2i5ewGYCxPT1ue3sdicFRV07kimXU3MecZAR9a6LcnHn2FykJ0e2cFG7+nvn78Oi1f/eNSfERmFAl1Sc3S3NlZ50ZnYsoopObEoaaZC5873NWnywVSfa6BkXDRy8p6N75Nzm1NgvbTerKN89EQyud9tvWrIZ31AohHoiKA4lCxYdG100XxeaAuq0e/iSxBWZIM7piDKePvJ+OJ3PD3hoQ8IePwv+NUuMxl1jc10O+kgXLoPZhh2FRiTGRaFvxxNjUYa9lbDWBv30BgUSp/mbtHh/Sz2MApUiPEEF+X67No/ebHNyG/If1swPiamTMucfde8G+grM0w4IfVkrEiULFkGpNuS58sZ77pQc6V0jRGL5akS3174r+WnKxwcl9aEn4frfhbm4d1zkC9fJOGwOaDcUR1z9Abr1e2sjlYbR+S1Ux5g2LLP41v5pE/NmFaxnk6GDtpMpRecWNnMqdwJ4i40UhtIFi3jaLUrHs4LipW4DaNig2NYZnVKWb8k3nCv1SVMSonHlsBzcNiYX3XPlEZw3l+nRUBA5pcn311jx4dZ6fLvXIFmoiDNaxq/cVG4ZdZy3KlyQ4XQ2gPOOe0Ky25D1hgRNsahBsAj6ZrrOvbReE0hAPRikJ0df5wTm1hvtAdX6Hdo9Dbde0AaXDGwR0RVMddvLYDMEVG4lYKhC6E8Hja7V1IZSj1Y60aTFR+k1Gse9WjMCDawHClkYBrtDGRR7PVq+VcGoRbAikYSc9NgZdQbbvVabM6Dtspz0ONx4XivcfH4btIqwfoZ2sxX1m0N+x+2VCoMNC7bp8MUuPar8LGVzMnHRsGclxswrNdgonhSY6nEkwQWr6cltmR77Ubm28fjlvSTI20S7cpcMaoFxA1sgLwLahpmK6mAq0bHXGA6O6Gz4+aAByw41YGOpGY4g3LC1SIr+parBTrGjwF2yHMlwwYochjRLjP5Mb7JLLsd8Mn07pLiEiwSsqeJddRtL4LQGtrIRw75qq6tqKbnSA6z2eQLJsZoDxkYnGTF59c8IgAtWZEGV/y5NT45+WWu0S9pN9EZeVjyG98xw/YzomRGWW8dGnRn6nT4zmiRBt3prikz4q8SEtcUmlOqDK4rN4jQH9FYn5fdR1c8grNE4wYALVuTyn8xmsTNr9Y3HXIlBpVPLRFcqUK92KejSOgmdWycFXcSMB6thqfTPd+YJEqdDdY3Ir2vErioL/io2oVAbeFFAT2QkaPbWmZ3kd6JGupwIgwtWhBMDnJeVHvdSudYa8ppb5PUi4XL9tEpCm+bxyG0ejzZZCS5R8wenw4m69cUQG0A6VGtFqcGGMr0dZQabS5yOipQVBqu4/0cgpMdp1mqtTqo8Kz4dgRN2uGDJh17NkqInmy2OqxvtzrimeNmZKTFo0zwB6SKK6Tka7bCbhE3f5DAv1dugNYtLgwk2cdFoTImNWlhrdlDZoLB68jjS4IIlP2ipc1VacsxD9UZbV/m9/KanVUp0ic3ufLnK5KBMh8jMF+J4hAuWvOkVFxs12eFwXmmzO+Vd8DzExEbB2jwpemm5wf4sgB3sAY6s4IKlDMjBf0FyXNTldifGmRsdgTQ5UAxJsZqG1Pio5eUGOxVhpPpmFsUcnErhgqU8yBoxJCct9lqLzTFea7TLr4xpAKQlRFWnxml+LNbZqc7+XxROYw9yZA8XLOVDfq5hWamxF1ltjuG6Bnvk9nmXQEZiVG1ybNS6CqPt60Y7fgdQwB7kKA4uWOqDBOu8tKToYQlx0UP0JlunBovDP89CE5EYo2lIi9cUxERrNtcZ7b8a7fgVQGj6i3EiEi5YHIKKHPY8rVXCeXEx0WebLPaOOpMto0Zva5L6NVQNIVqDEo3Gua/G5KTqGtvctgPFVyPgCMMFi+ML6ubSpkVKXMfWWTGna6Ki2zudzlSNU5PogDPR4XQkOuxIsDudCQ6HMylBo0mlnvXRcMZq4Iqn2aKjoqwx0bBoAJNGozE02h3aBouj2mp31tSY7PtqTY6D7k4vVCGWixLHK1ywOByObOCCxeFwZAMXLA6HIxu4YHE4HNnABYvD4cgGLlgcDkc2cMHicDiygQsWh8ORDVywOByObOCCxeFwZAMXLA6HIxu4YHE4HNnABYvD4cgGLlgcDkc2cMHicDiygQsWh8ORDVywOByObOCCxeFwZAMXLA6HIxu4YHE4HNnABYvD4cgGLlgcDkc2cMHicDiygQsWh8ORDVywOByObOCCxeFwZAMXLA6HIxu4YHE4HNnABYvD4cgGLlgcDkc2cMHicDiygQsWh8ORDVywOByObPg/a1P8d9ngrFkAAAAASUVORK5CYII=
+
+    <header class="page-header astro-SVYA2PP6">
+  
+  <a class="project-name astro-SVYA2PP6" href="/">
+    <h1 class="visuallyHeadline2 astro-SVYA2PP6">
+      <img src="../../assets/logo-openmoji-1F64B.2c7bf38f.svg" style="padding-right: 5px; margin-bottom: -3px" width="40px" height="auto" class="astro-SVYA2PP6">
+      OpenMoji
+    </h1>
+  </a>
+  <nav class="menu astro-SVYA2PP6">
+    <ul class="astro-SVYA2PP6">
+      <li class="astro-SVYA2PP6"><a class="standardLink astro-SVYA2PP6" href="/">OpenMoji</a></li><li class="astro-SVYA2PP6"><a class="standardLink astro-SVYA2PP6" href="/library">Library</a></li><li class="astro-SVYA2PP6"><a class="standardLink astro-SVYA2PP6" href="/styleguide">Participate</a></li><li class="astro-SVYA2PP6"><a class="standardLink astro-SVYA2PP6" href="/samples">Samples</a></li><li class="astro-SVYA2PP6"><a class="standardLink astro-SVYA2PP6" href="/faq">FAQ</a></li><li class="astro-SVYA2PP6"><a class="standardLink astro-SVYA2PP6" href="/about">About</a></li>
+    </ul>
+    <div class="social-link astro-SVYA2PP6">
+      <a class="gh-link iconlink astro-SVYA2PP6" rel="noopener" href="https://github.com/hfg-gmuend/openmoji" target="_blank">
+        <img src="../../assets/logo-github.a1fdb524.svg" class="social-icon astro-SVYA2PP6" alt="GitHub logo">
+      </a>
+      <a class="iconlink astro-SVYA2PP6" rel="noopener" href="https://twitter.com/OpenMoji" target="_blank">
+        <img src="../../assets/logo-twitter.d7535dc4.svg" class="social-icon astro-SVYA2PP6" alt="Twitter logo">
+      </a>
+    </div>
+  </nav>
+  <div class="actions astro-SVYA2PP6">
+    
+    <button class="mobile-toggle astro-SVYA2PP6">
+      <img id="openMenuIcon" src="../../assets/icon-menu.c8d9d32d.svg" alt="Open menu" class="astro-SVYA2PP6">
+      <img id="closeMenuIcon" class="hidden astro-SVYA2PP6" src="../../assets/icon-menu-close.cfd7ca54.svg" alt="Close menu">
+    </button>
+    <div class="action-links astro-SVYA2PP6">
+      <a class="gh-link iconlink astro-SVYA2PP6" rel="noopener" href="https://github.com/hfg-gmuend/openmoji" target="_blank">
+        <img src="../../assets/logo-github.a1fdb524.svg" class="social-icon astro-SVYA2PP6" alt="GitHub logo">
+      </a>
+      <a class="iconlink astro-SVYA2PP6" rel="noopener" href="https://twitter.com/OpenMoji" target="_blank">
+        <img src="../../assets/logo-twitter.d7535dc4.svg" class="social-icon astro-SVYA2PP6" alt="Twitter logo">
+      </a>
+      <div class="dropdown astro-RQFBBAKR">
+	
+	<button class="defaultButton red astro-RQFBBAKR">
+	  <div class="astro-RQFBBAKR">Get OpenMojis</div>
+	  <div class="astro-RQFBBAKR"><i class="arrow down astro-RQFBBAKR"></i></div>
+	</button>
+	<div class="dropdown-content astro-RQFBBAKR">
+	  <div class="list-wrapper astro-RQFBBAKR">
+	    <ul class="astro-RQFBBAKR">
+	    	<li class="astro-RQFBBAKR">
+	    				<a class="standardLink astro-RQFBBAKR" rel="noopener" href="https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-svg-color.zip" download="">
+	    					SVG Color
+	    				</a>
+	    			</li><li class="astro-RQFBBAKR">
+	    				<a class="standardLink astro-RQFBBAKR" rel="noopener" href="https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-svg-black.zip" download="">
+	    					SVG Black
+	    				</a>
+	    			</li><li class="astro-RQFBBAKR">
+	    				<a class="standardLink astro-RQFBBAKR" rel="noopener" href="https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-72x72-color.zip" download="">
+	    					PNG Color 72×72
+	    				</a>
+	    			</li><li class="astro-RQFBBAKR">
+	    				<a class="standardLink astro-RQFBBAKR" rel="noopener" href="https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-72x72-black.zip" download="">
+	    					PNG Black 72×72
+	    				</a>
+	    			</li><li class="astro-RQFBBAKR">
+	    				<a class="standardLink astro-RQFBBAKR" rel="noopener" href="https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-618x618-color.zip" download="">
+	    					PNG Color 618×618
+	    				</a>
+	    			</li><li class="astro-RQFBBAKR">
+	    				<a class="standardLink astro-RQFBBAKR" rel="noopener" href="https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-618x618-black.zip" download="">
+	    					PNG Black 618×618
+	    				</a>
+	    			</li>
+	    </ul>
+	    <ul class="astro-RQFBBAKR">
+	    	<li class="astro-RQFBBAKR">
+				        <a class="standardLink astro-RQFBBAKR" rel="noopener" href="https://github.com/hfg-gmuend/openmoji/tree/master/font#openmoji-fonts" target="_blank" download="">
+				        	OpenMoji Fonts
+				        </a>
+				        <div class="disclaimer astro-RQFBBAKR">proof of concept / Beta versions,<br>not intended for production use!</div>
+				    </li><li class="astro-RQFBBAKR">
+				        <a class="standardLink astro-RQFBBAKR" rel="noopener" href="https://itunes.apple.com/us/app/openmoji/id1462636288" target="_blank" download="">
+				        	OpenMoji App
+				        </a>
+				        <div class="disclaimer astro-RQFBBAKR">for iOS</div>
+				    </li><li class="astro-RQFBBAKR">
+				        <a class="standardLink astro-RQFBBAKR" rel="noopener" href="https://www.github.com/hfg-gmuend/openmoji/releases/latest" target="_blank" download="">
+				        	Download Source
+				        </a>
+				        
+				    </li>
+	    </ul>
+	  </div>
+	</div>
+</div>
+
+    </div>
+  </div>
+</header>
+<script type="text/javascript" src="/js-code/mobile-menu.js"></script>
+<div class="contentPusher astro-SVYA2PP6"></div>
+    
+<div class="wrapper astro-CPHZM2EF">
+    
+    <div class="preview astro-CPHZM2EF">
+        <div class="active-emoji-selection astro-CPHZM2EF">
+            <img id="main-emoji-image-color" class="main-emoji-image emoji-variant-color astro-CPHZM2EF" src="/data/color/svg/1F63D.svg" alt="kissing cat emoji">
+            <img class="main-emoji-image emoji-variant-black hidden astro-CPHZM2EF" src="/data/black/svg/1F63D.svg" alt="kissing cat emoji in black and white">
+
+            <div class="small-emoji-preview astro-2YPZSAYS">
+  
+
+  <div id="emoji-preview" class="astro-2YPZSAYS">
+    <div id="outline-emoji-preview" class="circle single-color visible astro-2YPZSAYS" onclick="colorChangeSingleColor('black')"></div>
+    <div id="color-emoji-preview" onclick="colorChangeSingleColor('')" class="circle highlight visible single-color astro-2YPZSAYS"></div>
+    
+  </div>
+  <script>let skintoneCombinations = {};
+let skintonesForHex = {};
+
+    const SKINTONECOMBINATIONS = skintoneCombinations;
+    const SKINTONESFORHEX = skintonesForHex;
+  </script>
+  <script type="text/javascript" src="/js-code/skintone-colorpicker.js"></script>
+</div>
+        </div>
+    </div>
+    <div class="description astro-CPHZM2EF">
+        <nav class="astro-CPHZM2EF">
+            <a class="redlink astro-CPHZM2EF" href="/library/">All OpenMojis</a>
+
+            <span class="astro-CPHZM2EF">
+                        / 
+                        <a class="redlink astro-CPHZM2EF" href="/library/#group=smileys-emotion">
+                            Smileys-emotion
+                        </a>
+                    </span>
+
+            <span class="astro-CPHZM2EF">
+                        / 
+                        <a class="redlink astro-CPHZM2EF" href="/library/#group=smileys-emotion%2Fcat-face">
+                            Cat-face
+                        </a>
+                    </span>
+        </nav>
+
+        <h1 class="astro-CPHZM2EF">kissing cat</h1>
+
+        <div class="astro-CPHZM2EF">
+                    <h2 class="astro-CPHZM2EF">
+                        <a target="_blank" class="standardLink astro-CPHZM2EF" href="https://emojipedia.org/">
+                            Emojipedia
+                        </a> 
+                        description:
+                    </h2>
+                    <p class="astro-CPHZM2EF">
+                        A cartoon cat variant of 😚 Kissing Face With Closed Eyes. Depicted as yellow on major platforms. 
+                        <a class="redlink astro-CPHZM2EF" target="_blank" href="https://emojipedia.org/kissing-cat">
+                            Read more
+                        </a>
+                    </p>
+                </div>
+
+        <table class="astro-CPHZM2EF">
+            <tbody class="astro-CPHZM2EF"><tr class="astro-CPHZM2EF">
+                <td class="astro-CPHZM2EF">
+                    <h2 class="astro-CPHZM2EF">Unicode</h2>
+                    
+
+<button-copy data-content="😽" class="astro-MAVBYCFP">
+    <button class="buttonCopy astro-MAVBYCFP">
+        <img class=" astro-MAVBYCFP" src="../../assets/E25B.3f3b3c16.svg" alt="copy to clipboard">
+    </button>
+</button-copy>
+
+<script>
+    // based on example from
+    // https://docs.astro.build/en/guides/client-side-scripts/#pass-frontmatter-variables-to-scripts
+    class ButtonCopy extends HTMLElement {
+        constructor() {
+            super();
+
+            const copyTextToClipboard = function (content) {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText#examples
+                navigator.clipboard.writeText(content).then(
+                    () => {
+                        console.log("copied '" + content + "' to clipboard.");
+                    },
+                    () => {
+                        console.error(
+                            "copy '" + content + "'to clipboard failed."
+                        );
+                    }
+                );
+            };
+
+            this.addEventListener("click", (event) => {
+                // Read the message from the data attribute.
+                const content = this.dataset.content;
+                // console.log("click for ", this, "\n", "content:", content);
+                if (content) {
+                    copyTextToClipboard(content);
+                }
+            });
+        }
+    }
+
+    customElements.define("button-copy", ButtonCopy);
+</script>
+
+                </td>
+                <td class="astro-CPHZM2EF">
+                    <a target="_blank" class="redlink astro-CPHZM2EF" href="https://decodeunicode.org/en/u+1F63D">
+                        1F63D
+                    </a>
+                </td>
+            </tr>
+
+            <tr class="astro-CPHZM2EF">
+                <td class="astro-CPHZM2EF"></td>
+                <td id="unicodeCombination" class="astro-CPHZM2EF"><a href="/library/emoji-1F63D" target="_blank" rel="noreferrer noopener" class="redlink">😽</a></td>
+            </tr>
+
+            <tr class="astro-CPHZM2EF">
+                <td class="astro-CPHZM2EF">
+                    <h2 class="astro-CPHZM2EF">Author</h2>
+                </td>
+                <td class="astro-CPHZM2EF">
+                    <a class="redlink astro-CPHZM2EF" href="/library/#author=Emily Jäger">
+                        Emily Jäger
+                    </a>
+                </td>
+            </tr>
+
+            <tr class="astro-CPHZM2EF">
+                <td class="astro-CPHZM2EF">
+                    <h2 class="astro-CPHZM2EF">Category</h2>
+                </td>
+                <td class="astro-CPHZM2EF">
+                    <a class="redlink astro-CPHZM2EF" href="/library/#group=smileys-emotion">
+                        smileys-emotion
+                    </a>
+                </td>
+            </tr>
+            <!--
+        // ToDo: This doesn't work due to a Astro-Bug. Remove this comment once resolved in a future version
+        {
+          openmoji.subgroups ? (
+            <tr>
+              <td>
+                <h2>Subcategory</h2>
+              </td>
+              <td>
+                <a class="redlink" href={urlSubgroup}>
+                  {openmoji.subgroups}
+                </a>
+              </td>
+            </tr>) : null
+        } -->
+        </tbody></table><a class="redlink astro-CPHZM2EF" href="/library/#group=smileys-emotion">
+
+        <!--
+            <div>
+                at least in dev mode something very wired is happening here!
+                some redlink things get inserted here and mess up all the following html..
+                i have not checked down another rabbit hole what is the course of this...
+            </div>
+        -->
+
+        </a><div class="downloadButtons emoji-variant-color astro-CPHZM2EF"><a class="redlink astro-CPHZM2EF" href="/library/#group=smileys-emotion">
+            
+
+
+<button-download-image class="astro-FO4ON2XU">
+    </button-download-image></a><a class="buttonDownloadImage astro-FO4ON2XU" href="/data/color/svg/1F63D.svg" download="" title="Ctr+Click to copy image to clipboard.">
+        <span class="astro-FO4ON2XU">
+            
+                SVG
+            
+        </span>
+    </a>
+
+
+<script>
+    // console.log(
+    //     "PING hier wird das script in der datei ButtonDownloadImage.astro ausgeführt!!!"
+    // );
+
+    // es scheint im astro setup ein bug / einstellung zu geben die momentan verhindert das dieses script,
+    //  so wie in der docu angegeben, nur einmal eingebunden wird.
+    // deshalb hier ein HACK der die definition unserer componente umschließt..
+    // link zu docu zu v0.23
+    // https://web.archive.org/web/20220521182404/https://docs.astro.build/en/core-concepts/astro-components/#client-side-scripts
+    if (customElements.get("button-download-image") == undefined) {
+        // console.log(
+        //     "HACK! we only do the following if the custom element is not defined.."
+        // );
+
+        const copyImageBlob = async function (blob) {
+            // The key is determined dynamically based on the blob's type.
+            let blobType = blob.type;
+            // console.log("blobType", blobType);
+            if (blobType) {
+                // https://stackoverflow.com/a/9851769/574981
+                // var isFirefox = typeof InstallTrigger !== "undefined";
+                // if (isFirefox && blobType.toLowerCase().includes("svg")) {
+                //     // Firefox: From version 122, the text/plain, text/html and image/png MIME types are supported.
+                //     // so we tell that svg is html. hope that this helps.. ;-)
+                //     blobType = "text/html";
+                // }
+                // this does not work so easy...
+                // maybe we first need to embed the svg in an html document..
+                // but for now i leave it as is.
+                // so fore firefox svg does not work..
+                // console.log("blobType", blobType);
+                return navigator.clipboard.write([
+                    new ClipboardItem({
+                        [blobType]: blob,
+                    }),
+                ]);
+            } else {
+                return Promise.reject(
+                    new Error(
+                        `image file type not given.. ('${blobType}'). \n
+                        (most likely it was not possible to donwload the image.)`
+                    )
+                );
+            }
+        };
+
+        const copyImgURLAsImageToClipboard = function (imgURL) {
+            // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write#browser_compatibility
+            // based on https://web.dev/articles/async-clipboard
+            // console.log("imgURL", imgURL);
+
+            // console.log("fetching image...");
+            fetch(imgURL)
+                .then((data) => data.blob())
+                // .then((blob) => {
+                //     console.log("creating blob url");
+                //     const objectURL = URL.createObjectURL(blob);
+                //     console.log("objectURL", objectURL);
+                //     return blob;
+                // })
+                .then(copyImageBlob)
+                .then((res) => {
+                    console.log(`image copy done.`, res);
+                })
+                .catch((err) => {
+                    console.error("error copying the image. \n", err);
+                    // console.error(err.name, err.message);
+                });
+        };
+
+        const buttonOnClickEvent = function (event, el) {
+            // console.log(
+            //     "click for ",
+            //     el,
+            //     "\n",
+            //     "event:",
+            //     event
+            // );
+            let href = el.querySelector("a").href;
+            if (!href) {
+                console.log("href not found.", el);
+            }
+            if (event.ctrlKey) {
+                event.preventDefault();
+                if (href) {
+                    copyImgURLAsImageToClipboard(href);
+                }
+            }
+        };
+
+        // https://docs.astro.build/en/guides/client-side-scripts/#handle-onclick-and-other-events
+        // https://tanggd.github.io/en/core-concepts/astro-components/#client-side-scripts
+        const buttonConnectedCallback = function (el) {
+            // console.log("buttonConnectedCallback", el);
+            el.addEventListener("click", (event) => {
+                buttonOnClickEvent(event, el);
+            });
+        };
+
+        class ButtonDownloadImage extends HTMLElement {
+            constructor() {
+                super();
+                // console.log("ButtonDownloadImage constructor", this);
+            }
+            connectedCallback() {
+                // console.log("ButtonDownloadImage connectedCallback", this);
+                buttonConnectedCallback(this);
+            }
+        }
+
+        customElements.define("button-download-image", ButtonDownloadImage);
+    }
+</script>
+
+            
+
+
+<button-download-image class="astro-FO4ON2XU">
+    <a class="buttonDownloadImage astro-FO4ON2XU" href="/php/download_asset.php?type=emoji&amp;emoji_hexcode=1F63D&amp;emoji_variant=color" download="" title="Ctr+Click to copy image to clipboard.">
+        <span class="astro-FO4ON2XU">
+            
+                PNG
+            
+        </span>
+    </a>
+</button-download-image>
+
+<script>
+    // console.log(
+    //     "PING hier wird das script in der datei ButtonDownloadImage.astro ausgeführt!!!"
+    // );
+
+    // es scheint im astro setup ein bug / einstellung zu geben die momentan verhindert das dieses script,
+    //  so wie in der docu angegeben, nur einmal eingebunden wird.
+    // deshalb hier ein HACK der die definition unserer componente umschließt..
+    // link zu docu zu v0.23
+    // https://web.archive.org/web/20220521182404/https://docs.astro.build/en/core-concepts/astro-components/#client-side-scripts
+    if (customElements.get("button-download-image") == undefined) {
+        // console.log(
+        //     "HACK! we only do the following if the custom element is not defined.."
+        // );
+
+        const copyImageBlob = async function (blob) {
+            // The key is determined dynamically based on the blob's type.
+            let blobType = blob.type;
+            // console.log("blobType", blobType);
+            if (blobType) {
+                // https://stackoverflow.com/a/9851769/574981
+                // var isFirefox = typeof InstallTrigger !== "undefined";
+                // if (isFirefox && blobType.toLowerCase().includes("svg")) {
+                //     // Firefox: From version 122, the text/plain, text/html and image/png MIME types are supported.
+                //     // so we tell that svg is html. hope that this helps.. ;-)
+                //     blobType = "text/html";
+                // }
+                // this does not work so easy...
+                // maybe we first need to embed the svg in an html document..
+                // but for now i leave it as is.
+                // so fore firefox svg does not work..
+                // console.log("blobType", blobType);
+                return navigator.clipboard.write([
+                    new ClipboardItem({
+                        [blobType]: blob,
+                    }),
+                ]);
+            } else {
+                return Promise.reject(
+                    new Error(
+                        `image file type not given.. ('${blobType}'). \n
+                        (most likely it was not possible to donwload the image.)`
+                    )
+                );
+            }
+        };
+
+        const copyImgURLAsImageToClipboard = function (imgURL) {
+            // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write#browser_compatibility
+            // based on https://web.dev/articles/async-clipboard
+            // console.log("imgURL", imgURL);
+
+            // console.log("fetching image...");
+            fetch(imgURL)
+                .then((data) => data.blob())
+                // .then((blob) => {
+                //     console.log("creating blob url");
+                //     const objectURL = URL.createObjectURL(blob);
+                //     console.log("objectURL", objectURL);
+                //     return blob;
+                // })
+                .then(copyImageBlob)
+                .then((res) => {
+                    console.log(`image copy done.`, res);
+                })
+                .catch((err) => {
+                    console.error("error copying the image. \n", err);
+                    // console.error(err.name, err.message);
+                });
+        };
+
+        const buttonOnClickEvent = function (event, el) {
+            // console.log(
+            //     "click for ",
+            //     el,
+            //     "\n",
+            //     "event:",
+            //     event
+            // );
+            let href = el.querySelector("a").href;
+            if (!href) {
+                console.log("href not found.", el);
+            }
+            if (event.ctrlKey) {
+                event.preventDefault();
+                if (href) {
+                    copyImgURLAsImageToClipboard(href);
+                }
+            }
+        };
+
+        // https://docs.astro.build/en/guides/client-side-scripts/#handle-onclick-and-other-events
+        // https://tanggd.github.io/en/core-concepts/astro-components/#client-side-scripts
+        const buttonConnectedCallback = function (el) {
+            // console.log("buttonConnectedCallback", el);
+            el.addEventListener("click", (event) => {
+                buttonOnClickEvent(event, el);
+            });
+        };
+
+        class ButtonDownloadImage extends HTMLElement {
+            constructor() {
+                super();
+                // console.log("ButtonDownloadImage constructor", this);
+            }
+            connectedCallback() {
+                // console.log("ButtonDownloadImage connectedCallback", this);
+                buttonConnectedCallback(this);
+            }
+        }
+
+        customElements.define("button-download-image", ButtonDownloadImage);
+    }
+</script>
+
+        </div>
+        <div class="emoji-variant-black hidden astro-CPHZM2EF">
+            
+
+
+<button-download-image class="astro-FO4ON2XU">
+    <a class="buttonDownloadImage astro-FO4ON2XU" href="/data/black/svg/1F63D.svg" download="" title="Ctr+Click to copy image to clipboard.">
+        <span class="astro-FO4ON2XU">
+            
+                SVG
+            
+        </span>
+    </a>
+</button-download-image>
+
+<script>
+    // console.log(
+    //     "PING hier wird das script in der datei ButtonDownloadImage.astro ausgeführt!!!"
+    // );
+
+    // es scheint im astro setup ein bug / einstellung zu geben die momentan verhindert das dieses script,
+    //  so wie in der docu angegeben, nur einmal eingebunden wird.
+    // deshalb hier ein HACK der die definition unserer componente umschließt..
+    // link zu docu zu v0.23
+    // https://web.archive.org/web/20220521182404/https://docs.astro.build/en/core-concepts/astro-components/#client-side-scripts
+    if (customElements.get("button-download-image") == undefined) {
+        // console.log(
+        //     "HACK! we only do the following if the custom element is not defined.."
+        // );
+
+        const copyImageBlob = async function (blob) {
+            // The key is determined dynamically based on the blob's type.
+            let blobType = blob.type;
+            // console.log("blobType", blobType);
+            if (blobType) {
+                // https://stackoverflow.com/a/9851769/574981
+                // var isFirefox = typeof InstallTrigger !== "undefined";
+                // if (isFirefox && blobType.toLowerCase().includes("svg")) {
+                //     // Firefox: From version 122, the text/plain, text/html and image/png MIME types are supported.
+                //     // so we tell that svg is html. hope that this helps.. ;-)
+                //     blobType = "text/html";
+                // }
+                // this does not work so easy...
+                // maybe we first need to embed the svg in an html document..
+                // but for now i leave it as is.
+                // so fore firefox svg does not work..
+                // console.log("blobType", blobType);
+                return navigator.clipboard.write([
+                    new ClipboardItem({
+                        [blobType]: blob,
+                    }),
+                ]);
+            } else {
+                return Promise.reject(
+                    new Error(
+                        `image file type not given.. ('${blobType}'). \n
+                        (most likely it was not possible to donwload the image.)`
+                    )
+                );
+            }
+        };
+
+        const copyImgURLAsImageToClipboard = function (imgURL) {
+            // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write#browser_compatibility
+            // based on https://web.dev/articles/async-clipboard
+            // console.log("imgURL", imgURL);
+
+            // console.log("fetching image...");
+            fetch(imgURL)
+                .then((data) => data.blob())
+                // .then((blob) => {
+                //     console.log("creating blob url");
+                //     const objectURL = URL.createObjectURL(blob);
+                //     console.log("objectURL", objectURL);
+                //     return blob;
+                // })
+                .then(copyImageBlob)
+                .then((res) => {
+                    console.log(`image copy done.`, res);
+                })
+                .catch((err) => {
+                    console.error("error copying the image. \n", err);
+                    // console.error(err.name, err.message);
+                });
+        };
+
+        const buttonOnClickEvent = function (event, el) {
+            // console.log(
+            //     "click for ",
+            //     el,
+            //     "\n",
+            //     "event:",
+            //     event
+            // );
+            let href = el.querySelector("a").href;
+            if (!href) {
+                console.log("href not found.", el);
+            }
+            if (event.ctrlKey) {
+                event.preventDefault();
+                if (href) {
+                    copyImgURLAsImageToClipboard(href);
+                }
+            }
+        };
+
+        // https://docs.astro.build/en/guides/client-side-scripts/#handle-onclick-and-other-events
+        // https://tanggd.github.io/en/core-concepts/astro-components/#client-side-scripts
+        const buttonConnectedCallback = function (el) {
+            // console.log("buttonConnectedCallback", el);
+            el.addEventListener("click", (event) => {
+                buttonOnClickEvent(event, el);
+            });
+        };
+
+        class ButtonDownloadImage extends HTMLElement {
+            constructor() {
+                super();
+                // console.log("ButtonDownloadImage constructor", this);
+            }
+            connectedCallback() {
+                // console.log("ButtonDownloadImage connectedCallback", this);
+                buttonConnectedCallback(this);
+            }
+        }
+
+        customElements.define("button-download-image", ButtonDownloadImage);
+    }
+</script>
+
+            
+
+
+<button-download-image class="astro-FO4ON2XU">
+    <a class="buttonDownloadImage astro-FO4ON2XU" href="/php/download_asset.php?type=emoji&amp;emoji_hexcode=1F63D&amp;emoji_variant=black" download="" title="Ctr+Click to copy image to clipboard.">
+        <span class="astro-FO4ON2XU">
+            
+                PNG
+            
+        </span>
+    </a>
+</button-download-image>
+
+<script>
+    // console.log(
+    //     "PING hier wird das script in der datei ButtonDownloadImage.astro ausgeführt!!!"
+    // );
+
+    // es scheint im astro setup ein bug / einstellung zu geben die momentan verhindert das dieses script,
+    //  so wie in der docu angegeben, nur einmal eingebunden wird.
+    // deshalb hier ein HACK der die definition unserer componente umschließt..
+    // link zu docu zu v0.23
+    // https://web.archive.org/web/20220521182404/https://docs.astro.build/en/core-concepts/astro-components/#client-side-scripts
+    if (customElements.get("button-download-image") == undefined) {
+        // console.log(
+        //     "HACK! we only do the following if the custom element is not defined.."
+        // );
+
+        const copyImageBlob = async function (blob) {
+            // The key is determined dynamically based on the blob's type.
+            let blobType = blob.type;
+            // console.log("blobType", blobType);
+            if (blobType) {
+                // https://stackoverflow.com/a/9851769/574981
+                // var isFirefox = typeof InstallTrigger !== "undefined";
+                // if (isFirefox && blobType.toLowerCase().includes("svg")) {
+                //     // Firefox: From version 122, the text/plain, text/html and image/png MIME types are supported.
+                //     // so we tell that svg is html. hope that this helps.. ;-)
+                //     blobType = "text/html";
+                // }
+                // this does not work so easy...
+                // maybe we first need to embed the svg in an html document..
+                // but for now i leave it as is.
+                // so fore firefox svg does not work..
+                // console.log("blobType", blobType);
+                return navigator.clipboard.write([
+                    new ClipboardItem({
+                        [blobType]: blob,
+                    }),
+                ]);
+            } else {
+                return Promise.reject(
+                    new Error(
+                        `image file type not given.. ('${blobType}'). \n
+                        (most likely it was not possible to donwload the image.)`
+                    )
+                );
+            }
+        };
+
+        const copyImgURLAsImageToClipboard = function (imgURL) {
+            // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write#browser_compatibility
+            // based on https://web.dev/articles/async-clipboard
+            // console.log("imgURL", imgURL);
+
+            // console.log("fetching image...");
+            fetch(imgURL)
+                .then((data) => data.blob())
+                // .then((blob) => {
+                //     console.log("creating blob url");
+                //     const objectURL = URL.createObjectURL(blob);
+                //     console.log("objectURL", objectURL);
+                //     return blob;
+                // })
+                .then(copyImageBlob)
+                .then((res) => {
+                    console.log(`image copy done.`, res);
+                })
+                .catch((err) => {
+                    console.error("error copying the image. \n", err);
+                    // console.error(err.name, err.message);
+                });
+        };
+
+        const buttonOnClickEvent = function (event, el) {
+            // console.log(
+            //     "click for ",
+            //     el,
+            //     "\n",
+            //     "event:",
+            //     event
+            // );
+            let href = el.querySelector("a").href;
+            if (!href) {
+                console.log("href not found.", el);
+            }
+            if (event.ctrlKey) {
+                event.preventDefault();
+                if (href) {
+                    copyImgURLAsImageToClipboard(href);
+                }
+            }
+        };
+
+        // https://docs.astro.build/en/guides/client-side-scripts/#handle-onclick-and-other-events
+        // https://tanggd.github.io/en/core-concepts/astro-components/#client-side-scripts
+        const buttonConnectedCallback = function (el) {
+            // console.log("buttonConnectedCallback", el);
+            el.addEventListener("click", (event) => {
+                buttonOnClickEvent(event, el);
+            });
+        };
+
+        class ButtonDownloadImage extends HTMLElement {
+            constructor() {
+                super();
+                // console.log("ButtonDownloadImage constructor", this);
+            }
+            connectedCallback() {
+                // console.log("ButtonDownloadImage connectedCallback", this);
+                buttonConnectedCallback(this);
+            }
+        }
+
+        customElements.define("button-download-image", ButtonDownloadImage);
+    }
+</script>
+
+        </div>
+    </div><a class="redlink astro-CPHZM2EF" href="/library/#group=smileys-emotion">
+</a></div><a class="redlink astro-CPHZM2EF" href="/library/#group=smileys-emotion">
+</a>
+    
+<section id="wrapper" class="astro-NI276QRK">
+  
+  <a class="nav astro-NI276QRK" href="/library/emoji-1F63C">
+    <img class="arrow astro-NI276QRK" src="../../assets/icon-arrow-from.ee2b3a5c.svg" alt="←">
+    <img class="emoji astro-NI276QRK" src="/data/color/svg/1F63C.svg" alt="cat with wry smile emoji">
+  </a>
+  <a class="nav astro-NI276QRK" href="/library/emoji-1F640">
+    <img class="emoji astro-NI276QRK" src="/data/color/svg/1F640.svg" alt="weary cat emoji">
+    <img class="arrow astro-NI276QRK" src="../../assets/icon-arrow-to.09c9e010.svg" alt="→">
+  </a>
+</section>
+  <footer class="default astro-6M53DM6Y">
+  
+  <div class="astro-6M53DM6Y">
+    <p class="astro-6M53DM6Y">
+      <a id="impressumLink" href="/imprint" class="astro-6M53DM6Y">Imprint</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/." class="astro-6M53DM6Y">CC BY-SA 4.0</a>
+    </p>
+  </div>
+  <!-- <ul>
+    <li>
+      <a class="iconlink" rel="noopener"
+        href="https://www.facebook.com/sharer.php?u=https://www.github.com/hfg-gmuend/openmoji/releases/latest">
+        <img alt="Facebook logo" src={style === 'outline' ? facebookLogoOutline : facebookLogoColor} target="_blank">
+      </a>
+    </li>
+    <li>
+      <a class="iconlink" rel="noopener"
+        href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+          <img alt="Pinterest logo" src={style === 'outline' ? pinterestLogoOutline : pinterestLogoColor} target="_blank">
+      </a>
+    </li>
+  </ul> -->
+</footer>
+  <script type="text/javascript" src="/js-code/fetch-openmoji-json.js"></script>
