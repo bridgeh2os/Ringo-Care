@@ -1,4 +1,5 @@
 import { save, load } from "./storage.js";
+import { syncMedicationLog } from "./sync.js";
 
 
 // Load medication data and create medication cards
@@ -19,12 +20,33 @@ async function loadMedications() {
     medications.forEach(
         medication => {
 
+
+            const logs =
+                load("medicationLogs") || [];
+
+
+            const medicationLogs =
+                logs.filter(
+                    log =>
+                    log.medication === medication.id
+                );
+
+
+            const lastLog =
+                medicationLogs.at(-1);
+
+
             const lastGiven =
-                load(medication.id);
+                lastLog
+                    ? new Date(
+                        lastLog.timestamp
+                    ).toLocaleString()
+                    : "Not logged yet";
 
 
             const card =
                 document.createElement("article");
+
 
             card.className = "card";
 
@@ -35,9 +57,11 @@ async function loadMedications() {
                     ${medication.name}
                 </h3>
 
+
                 <p>
                     ${medication.type}
                 </p>
+
 
                 <button 
                     class="button button-primary"
@@ -46,11 +70,10 @@ async function loadMedications() {
                     Log Given
                 </button>
 
-                <p 
-                    id="${medication.id}-status"
-                >
+
+                <p id="${medication.id}-status">
                     Last given:
-                    ${lastGiven ?? "Not logged yet"}
+                    ${lastGiven}
                 </p>
 
             `;
@@ -81,29 +104,65 @@ function addMedicationListeners() {
     buttons.forEach(
         button => {
 
+
             button.addEventListener(
                 "click",
-                () => {
+                async () => {
+
 
                     const medication =
                         button.dataset.medication;
 
 
-                    const timestamp =
-                        new Date()
-                            .toLocaleString();
+                    const notes =
+                        window.prompt(
+                            `Notes for ${medication}? (optional)`
+                        );
+
+
+                    const logEntry = {
+
+                        medication,
+
+                        timestamp:
+                            new Date()
+                            .toISOString(),
+
+                        notes:
+                            notes || ""
+
+                    };
+
+
+                    const logs =
+                        load("medicationLogs")
+                        || [];
+
+
+                    logs.push(
+                        logEntry
+                    );
 
 
                     save(
-                        medication,
-                        timestamp
+                        "medicationLogs",
+                        logs
+                    );
+
+
+                    await syncMedicationLog(
+                        logEntry
                     );
 
 
                     document.querySelector(
                         `#${medication}-status`
                     ).textContent =
-                        `Last given: ${timestamp}`;
+                        `Last given: ${
+                            new Date(
+                                logEntry.timestamp
+                            ).toLocaleString()
+                        }`;
 
                 }
             );
