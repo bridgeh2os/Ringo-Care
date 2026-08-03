@@ -1,35 +1,118 @@
-/*
-Future abstraction layer.
-
-Instead of scattering localStorage
-calls throughout the app, future
-features can use this module.
-
-Example:
-
-storage.save("medications", data)
-
-Later this can migrate to IndexedDB.
-*/
+import { save, load } from "./storage.js";
 
 
-export function save(key,value){
+// Load medication data and create medication cards
 
-localStorage.setItem(
-key,
-JSON.stringify(value)
-);
+async function loadMedications() {
+
+    const response = await fetch(
+        "./data/medications.json"
+    );
+
+    const medications = await response.json();
+
+
+    const container =
+        document.querySelector("#medication-list");
+
+
+    medications.forEach(
+        medication => {
+
+            const lastGiven =
+                load(medication.id);
+
+
+            const card =
+                document.createElement("article");
+
+            card.className = "card";
+
+
+            card.innerHTML = `
+
+                <h3>
+                    ${medication.name}
+                </h3>
+
+                <p>
+                    ${medication.type}
+                </p>
+
+                <button 
+                    class="button button-primary"
+                    data-medication="${medication.id}"
+                >
+                    Log Given
+                </button>
+
+                <p 
+                    id="${medication.id}-status"
+                >
+                    Last given:
+                    ${lastGiven ?? "Not logged yet"}
+                </p>
+
+            `;
+
+
+            container.appendChild(card);
+
+        }
+    );
+
+
+    addMedicationListeners();
 
 }
 
 
-export function load(key){
 
-const data =
-localStorage.getItem(key);
+// Add button functionality
 
-return data
-? JSON.parse(data)
-: null;
+function addMedicationListeners() {
+
+    const buttons =
+        document.querySelectorAll(
+            "[data-medication]"
+        );
+
+
+    buttons.forEach(
+        button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    const medication =
+                        button.dataset.medication;
+
+
+                    const timestamp =
+                        new Date()
+                            .toLocaleString();
+
+
+                    save(
+                        medication,
+                        timestamp
+                    );
+
+
+                    document.querySelector(
+                        `#${medication}-status`
+                    ).textContent =
+                        `Last given: ${timestamp}`;
+
+                }
+            );
+
+        }
+    );
 
 }
+
+
+
+loadMedications();
