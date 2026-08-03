@@ -1,7 +1,6 @@
 import { save, load } from "./storage.js";
 
 
-// Load medication data and create medication cards
 
 async function loadMedications() {
 
@@ -9,7 +8,8 @@ async function loadMedications() {
         "./data/medications.json"
     );
 
-    const medications = await response.json();
+    const medications =
+        await response.json();
 
 
     const container =
@@ -18,6 +18,7 @@ async function loadMedications() {
 
     medications.forEach(
         medication => {
+
 
             const logs =
                 load("medicationLogs") || [];
@@ -34,11 +35,34 @@ async function loadMedications() {
                 medicationLogs.at(-1);
 
 
-            const displayTime =
+            const lastGiven =
                 lastLog
                     ? new Date(lastLog.timestamp)
                         .toLocaleString()
                     : "Not logged yet";
+
+
+            const history =
+                medicationLogs.length
+                    ? medicationLogs
+                        .slice()
+                        .reverse()
+                        .map(
+                            log =>
+                            `
+                            <li>
+                                ${
+                                    new Date(
+                                        log.timestamp
+                                    )
+                                    .toLocaleString()
+                                }
+                            </li>
+                            `
+                        )
+                        .join("")
+                    : "<li>No history yet</li>";
+
 
 
             const card =
@@ -54,6 +78,7 @@ async function loadMedications() {
                     ${medication.name}
                 </h3>
 
+
                 <p>
                     ${medication.type}
                 </p>
@@ -67,10 +92,26 @@ async function loadMedications() {
                 </button>
 
 
-                <p id="${medication.id}-status">
+                <p>
                     Last given:
-                    ${displayTime}
+                    <br>
+                    ${lastGiven}
                 </p>
+
+
+                <details>
+
+                    <summary>
+                        View History
+                    </summary>
+
+
+                    <ul>
+                        ${history}
+                    </ul>
+
+                </details>
+
 
             `;
 
@@ -87,7 +128,6 @@ async function loadMedications() {
 
 
 
-// Handle medication logging
 
 function addMedicationListeners(){
 
@@ -100,18 +140,16 @@ function addMedicationListeners(){
     buttons.forEach(
         button => {
 
+
             button.addEventListener(
                 "click",
                 () => {
 
 
-                    const medication =
-                        button.dataset.medication;
-
-
                     const logEntry = {
 
-                        medication,
+                        medication:
+                            button.dataset.medication,
 
                         timestamp:
                             new Date()
@@ -123,32 +161,28 @@ function addMedicationListeners(){
                     };
 
 
-                    const existingLogs =
-                        load("medicationLogs") || [];
+                    const logs =
+                        load("medicationLogs")
+                        || [];
 
 
-                    existingLogs.push(
+                    logs.push(
                         logEntry
                     );
 
 
                     save(
                         "medicationLogs",
-                        existingLogs
+                        logs
                     );
 
 
-                    document.querySelector(
-                        `#${medication}-status`
-                    ).textContent =
-                        `Last given: ${
-                            new Date(
-                                logEntry.timestamp
-                            ).toLocaleString()
-                        }`;
+                    location.reload();
+
 
                 }
             );
+
 
         }
     );
