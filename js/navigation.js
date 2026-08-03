@@ -9,7 +9,7 @@ const pages = [
     },
     {
         name:"Medical",
-        link:"medical.html"
+        link:"medications.html"
     },
   
 ];
