@@ -1,6 +1,14 @@
 import "./navigation.js";
 import "./theme.js";
-import "./medications.js";
+
+
+if (
+    document.querySelector("#medication-list")
+) {
+
+    import("./medications.js");
+
+}
 
 
 // Register service worker
