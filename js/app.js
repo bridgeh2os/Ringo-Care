@@ -1,5 +1,6 @@
 import "./navigation.js";
 import "./theme.js";
+import "./medications.js";
 
 
 // Register service worker
