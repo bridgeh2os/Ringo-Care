@@ -1,6 +1,7 @@
 import { save, load } from "./storage.js";
 
 
+// Load medication data and create medication cards
 
 async function loadMedications() {
 
@@ -42,29 +43,6 @@ async function loadMedications() {
                     : "Not logged yet";
 
 
-            const history =
-                medicationLogs.length
-                    ? medicationLogs
-                        .slice()
-                        .reverse()
-                        .map(
-                            log =>
-                            `
-                            <li>
-                                ${
-                                    new Date(
-                                        log.timestamp
-                                    )
-                                    .toLocaleString()
-                                }
-                            </li>
-                            `
-                        )
-                        .join("")
-                    : "<li>No history yet</li>";
-
-
-
             const card =
                 document.createElement("article");
 
@@ -77,7 +55,6 @@ async function loadMedications() {
                 <h3>
                     ${medication.name}
                 </h3>
-
 
                 <p>
                     ${medication.type}
@@ -98,21 +75,6 @@ async function loadMedications() {
                     ${lastGiven}
                 </p>
 
-
-                <details>
-
-                    <summary>
-                        View History
-                    </summary>
-
-
-                    <ul>
-                        ${history}
-                    </ul>
-
-                </details>
-
-
             `;
 
 
@@ -128,6 +90,8 @@ async function loadMedications() {
 
 
 
+
+// Log medication events
 
 function addMedicationListeners(){
 
@@ -146,18 +110,28 @@ function addMedicationListeners(){
                 () => {
 
 
-  const logEntry = {
+                    const medication =
+                        button.dataset.medication;
 
-    medication,
 
-    timestamp:
-        new Date()
-        .toISOString(),
+                    const notes =
+                        window.prompt(
+                            `Notes for ${medication}? (optional)`
+                        );
 
-    notes:
-        ""
 
-};
+                    const logEntry = {
+
+                        medication,
+
+                        timestamp:
+                            new Date()
+                            .toISOString(),
+
+                        notes:
+                            notes || ""
+
+                    };
 
 
                     const logs =
