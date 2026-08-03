@@ -1,3 +1,6 @@
+import { save, load } from "./storage.js";
+
+
 // Load medication data and create medication cards
 
 async function loadMedications() {
@@ -16,8 +19,31 @@ async function loadMedications() {
     medications.forEach(
         medication => {
 
+            const logs =
+                load("medicationLogs") || [];
+
+
+            const medicationLogs =
+                logs.filter(
+                    log =>
+                    log.medication === medication.id
+                );
+
+
+            const lastLog =
+                medicationLogs.at(-1);
+
+
+            const displayTime =
+                lastLog
+                    ? new Date(lastLog.timestamp)
+                        .toLocaleString()
+                    : "Not logged yet";
+
+
             const card =
                 document.createElement("article");
+
 
             card.className = "card";
 
@@ -32,18 +58,18 @@ async function loadMedications() {
                     ${medication.type}
                 </p>
 
-                <button 
+
+                <button
                     class="button button-primary"
                     data-medication="${medication.id}"
                 >
                     Log Given
                 </button>
 
-                <p 
-                    id="${medication.id}-status"
-                >
+
+                <p id="${medication.id}-status">
                     Last given:
-                    Not logged yet
+                    ${displayTime}
                 </p>
 
             `;
@@ -61,9 +87,9 @@ async function loadMedications() {
 
 
 
-// Add button functionality
+// Handle medication logging
 
-function addMedicationListeners() {
+function addMedicationListeners(){
 
     const buttons =
         document.querySelectorAll(
@@ -78,25 +104,48 @@ function addMedicationListeners() {
                 "click",
                 () => {
 
+
                     const medication =
                         button.dataset.medication;
 
 
-                    const timestamp =
-                        new Date()
-                            .toLocaleString();
+                    const logEntry = {
 
-
-                    localStorage.setItem(
                         medication,
-                        timestamp
+
+                        timestamp:
+                            new Date()
+                            .toISOString(),
+
+                        givenBy:
+                            "Unknown"
+
+                    };
+
+
+                    const existingLogs =
+                        load("medicationLogs") || [];
+
+
+                    existingLogs.push(
+                        logEntry
+                    );
+
+
+                    save(
+                        "medicationLogs",
+                        existingLogs
                     );
 
 
                     document.querySelector(
                         `#${medication}-status`
                     ).textContent =
-                        `Last given: ${timestamp}`;
+                        `Last given: ${
+                            new Date(
+                                logEntry.timestamp
+                            ).toLocaleString()
+                        }`;
 
                 }
             );
