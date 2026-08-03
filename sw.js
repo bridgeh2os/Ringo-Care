@@ -12,6 +12,7 @@ const APP_FILES = [
     "./js/navigation.js",
     "./js/theme.js",
     "./js/storage.js",
+    "./js/sync.js",
 
     "./manifest.json"
 ];
