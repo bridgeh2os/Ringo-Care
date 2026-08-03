@@ -1,12 +1,17 @@
-// Load medication data and create medication cards
+import { save, load } from "./storage.js";
+import { syncMedicationLog } from "./sync.js";
+
+
+// Load medication data
 
 async function loadMedications() {
 
-    const response = await fetch(
-        "./data/medications.json"
-    );
+    const response =
+        await fetch("./data/medications.json");
 
-    const medications = await response.json();
+
+    const medications =
+        await response.json();
 
 
     const container =
@@ -16,8 +21,33 @@ async function loadMedications() {
     medications.forEach(
         medication => {
 
+
+            const logs =
+                load("medicationLogs") || [];
+
+
+            const medicationLogs =
+                logs.filter(
+                    log =>
+                    log.medication === medication.id
+                );
+
+
+            const lastLog =
+                medicationLogs.at(-1);
+
+
+            const lastGiven =
+                lastLog
+                    ? new Date(
+                        lastLog.timestamp
+                    ).toLocaleString()
+                    : "Not logged yet";
+
+
             const card =
                 document.createElement("article");
+
 
             card.className = "card";
 
@@ -28,23 +58,28 @@ async function loadMedications() {
                     ${medication.name}
                 </h3>
 
+
                 <p>
                     ${medication.type}
                 </p>
 
-                <button 
+
+                <button
                     class="button button-primary"
                     data-medication="${medication.id}"
                 >
                     Log Given
                 </button>
 
-                <p 
-                    id="${medication.id}-status"
-                >
-                    Last given:
-                    Not logged yet
+
+                <p>
+                    <strong>
+                        Last given:
+                    </strong>
+                    <br>
+                    ${lastGiven}
                 </p>
+
 
             `;
 
@@ -61,9 +96,10 @@ async function loadMedications() {
 
 
 
-// Add button functionality
+// Handle medication logging
 
 function addMedicationListeners() {
+
 
     const buttons =
         document.querySelectorAll(
@@ -74,29 +110,58 @@ function addMedicationListeners() {
     buttons.forEach(
         button => {
 
+
             button.addEventListener(
                 "click",
-                () => {
+                async () => {
+
 
                     const medication =
                         button.dataset.medication;
 
 
-                    const timestamp =
-                        new Date()
-                            .toLocaleString();
+                    const notes =
+                        window.prompt(
+                            `Notes for ${medication}? (optional)`
+                        );
 
 
-                    localStorage.setItem(
+                    const logEntry = {
+
                         medication,
-                        timestamp
+
+                        timestamp:
+                            new Date()
+                            .toISOString(),
+
+                        notes:
+                            notes || ""
+
+                    };
+
+
+                    const logs =
+                        load("medicationLogs")
+                        || [];
+
+
+                    logs.push(
+                        logEntry
                     );
 
 
-                    document.querySelector(
-                        `#${medication}-status`
-                    ).textContent =
-                        `Last given: ${timestamp}`;
+                    save(
+                        "medicationLogs",
+                        logs
+                    );
+
+
+                    await syncMedicationLog(
+                        logEntry
+                    );
+
+
+                    location.reload();
 
                 }
             );

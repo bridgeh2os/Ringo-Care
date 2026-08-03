@@ -2,16 +2,16 @@
   {
     "id": "gabapentin",
     "name": "Gabapentin",
-    "type": "Medication"
+    "type": "Every other day • 0.15 mL"
   },
   {
     "id": "mirataz",
     "name": "Mirataz",
-    "type": "Medication"
+    "type": "Monday & Thursday • Appetite stimulant"
   },
   {
     "id": "thyroid",
-    "name": "Thyroid Medication",
-    "type": "Medication"
+    "name": "Methimazole (Thyroid Medication)",
+    "type": "Daily • Ear medication"
   }
 ]
