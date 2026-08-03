@@ -8,7 +8,7 @@ For now, it only prepares the structure.
 */
 
 
-const GOOGLE_SCRIPT_URL = "";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyzpKEKilhM8JjIdKAKQRk79qihw1tM5HiLNssnwyYDTw45vetBUWqHQZDH5I4lKuvN/exec";
 
 
 export async function syncMedicationLog(logEntry) {
