@@ -13,30 +13,39 @@ const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyzpKEKilhM8J
 
 export async function syncMedicationLog(logEntry) {
 
-    if (!GOOGLE_SCRIPT_URL) {
+    try {
+
+        await fetch(
+            GOOGLE_SCRIPT_URL,
+            {
+                method: "POST",
+
+                mode: "no-cors",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(logEntry)
+
+            }
+        );
+
 
         console.log(
-            "Google Sheets sync not configured yet",
+            "Medication synced:",
             logEntry
         );
 
-        return;
-
     }
 
+    catch(error) {
 
-    await fetch(
-        GOOGLE_SCRIPT_URL,
-        {
-            method: "POST",
+        console.error(
+            "Medication sync failed:",
+            error
+        );
 
-            headers: {
-                "Content-Type": "application/json"
-            },
-
-            body: JSON.stringify(logEntry)
-
-        }
-    );
+    }
 
 }
