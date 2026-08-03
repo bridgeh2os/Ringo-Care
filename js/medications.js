@@ -1,4 +1,5 @@
 import { save, load } from "./storage.js";
+import { syncMedicationLog } from "./sync.js";
 
 
 // Load medication data and create medication cards
