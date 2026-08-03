@@ -1,0 +1,17 @@
+[
+  {
+    "id": "gabapentin",
+    "name": "Gabapentin",
+    "type": "Medication"
+  },
+  {
+    "id": "mirataz",
+    "name": "Mirataz",
+    "type": "Medication"
+  },
+  {
+    "id": "thyroid",
+    "name": "Thyroid Medication",
+    "type": "Medication"
+  }
+]
