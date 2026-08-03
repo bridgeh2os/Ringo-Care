@@ -146,19 +146,18 @@ function addMedicationListeners(){
                 () => {
 
 
-                    const logEntry = {
+  const logEntry = {
 
-                        medication:
-                            button.dataset.medication,
+    medication,
 
-                        timestamp:
-                            new Date()
-                            .toISOString(),
+    timestamp:
+        new Date()
+        .toISOString(),
 
-                        givenBy:
-                            "Unknown"
+    notes:
+        ""
 
-                    };
+};
 
 
                     const logs =
