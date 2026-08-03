@@ -2,13 +2,13 @@ import { save, load } from "./storage.js";
 import { syncMedicationLog } from "./sync.js";
 
 
-// Load medication data and create medication cards
+// Load medication data
 
 async function loadMedications() {
 
-    const response = await fetch(
-        "./data/medications.json"
-    );
+    const response =
+        await fetch("./data/medications.json");
+
 
     const medications =
         await response.json();
@@ -39,8 +39,9 @@ async function loadMedications() {
 
             const lastGiven =
                 lastLog
-                    ? new Date(lastLog.timestamp)
-                        .toLocaleString()
+                    ? new Date(
+                        lastLog.timestamp
+                    ).toLocaleString()
                     : "Not logged yet";
 
 
@@ -57,6 +58,7 @@ async function loadMedications() {
                     ${medication.name}
                 </h3>
 
+
                 <p>
                     ${medication.type}
                 </p>
@@ -71,10 +73,13 @@ async function loadMedications() {
 
 
                 <p>
-                    Last given:
+                    <strong>
+                        Last given:
+                    </strong>
                     <br>
                     ${lastGiven}
                 </p>
+
 
             `;
 
@@ -91,10 +96,10 @@ async function loadMedications() {
 
 
 
+// Handle medication logging
 
-// Log medication events
+function addMedicationListeners() {
 
-function addMedicationListeners(){
 
     const buttons =
         document.querySelectorAll(
@@ -108,7 +113,7 @@ function addMedicationListeners(){
 
             button.addEventListener(
                 "click",
-                () => {
+                async () => {
 
 
                     const medication =
@@ -151,12 +156,15 @@ function addMedicationListeners(){
                     );
 
 
-                    location.reload();
+                    await syncMedicationLog(
+                        logEntry
+                    );
 
+
+                    location.reload();
 
                 }
             );
-
 
         }
     );
